@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="179.538" height="174.538" viewBox="0 0 179.538 174.538">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Mask" cx="66.555" cy="66.555" r="66.555" transform="matrix(0.788, 0.616, -0.616, 0.788, 82.529, 0.579)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="_4" data-name="4" transform="matrix(-0.966, 0.259, -0.259, -0.966, 207.395, 153.737)" opacity="0.2">
+    <circle id="Mask-2" data-name="Mask" cx="66.555" cy="66.555" r="66.555" transform="matrix(0.788, 0.616, -0.616, 0.788, 82.529, 0.579)" fill="none"/>
+    <g id="_4-2" data-name="4" transform="translate(4.83 1.294)" clip-path="url(#clip-path)">
+      <g id="lines" transform="translate(18.595 29.078)">
+        <rect id="_1" data-name="1" width="148.219" height="14.929" transform="translate(2.331 0.273)" fill="#155799"/>
+        <rect id="_2" data-name="2" width="148.219" height="14.929" transform="translate(2.539 29.317)" fill="#155799"/>
+        <rect id="_3" data-name="3" width="148.219" height="14.929" transform="translate(2.746 58.36)" fill="#155799"/>
+        <rect id="_4-3" data-name="4" width="148.219" height="14.929" transform="translate(0.206 88.755)" fill="#155799"/>
+        <rect id="_5" data-name="5" width="148.219" height="14.929" transform="translate(0.414 117.798)" fill="#155799"/>
+      </g>
+    </g>
+  </g>
+</svg>

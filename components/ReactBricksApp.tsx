@@ -1,38 +1,18 @@
-import { useTheme } from 'next-themes'
-import type { AppProps } from 'next/app'
-import { useEffect, useState } from 'react'
+import { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
 import { ReactBricks } from 'react-bricks/frontend'
 
 import config from '../react-bricks/config'
+import { Layout } from './layout/Layout'
 
 const ReactBricksApp = ({ Component, pageProps }: AppProps) => {
-  // Color Mode Management
-  const savedColorMode =
-    typeof window === 'undefined' ? '' : localStorage.getItem('color-mode')
-
-  const [colorMode, setColorMode] = useState(savedColorMode || 'light')
-
-  const { setTheme } = useTheme()
-
-  const toggleColorMode = () => {
-    const newColorMode = colorMode === 'light' ? 'dark' : 'light'
-    setColorMode(newColorMode)
-    localStorage.setItem('color-mode', newColorMode)
-    setTheme(newColorMode)
-  }
-
-  const reactBricksConfig = {
-    ...config,
-    isDarkColorMode: colorMode === 'dark',
-    toggleColorMode,
-    contentClassName: `antialiased font-content ${colorMode} ${
-      colorMode === 'dark' ? 'dark bg-gray-900' : 'light bg-white'
-    }`,
-  }
+  const { pathname } = useRouter()
 
   return (
-    <ReactBricks {...reactBricksConfig}>
-      <Component {...pageProps} />
+    <ReactBricks {...config}>
+      <Layout pathname={pathname}>
+        <Component {...pageProps} />
+      </Layout>
     </ReactBricks>
   )
 }

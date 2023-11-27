@@ -1,0 +1,23 @@
+<svg id="clock_1_" data-name="clock (1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fdc830"/>
+      <stop offset="1" stop-color="#f37335"/>
+    </linearGradient>
+  </defs>
+  <path id="Shape" d="M0,24A24,24,0,1,1,24,48,24,24,0,0,1,0,24Z" fill="url(#linear-gradient)"/>
+  <path id="Shape-2" data-name="Shape" d="M0,20A20,20,0,1,1,20,40,20,20,0,0,1,0,20Z" transform="translate(4 4)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle" width="2" height="2" transform="translate(23 8)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-2" data-name="Rectangle" width="2" height="2" transform="translate(23 38)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-3" data-name="Rectangle" width="1.599" height="1.599" transform="translate(15.306 10.544) rotate(-30.009)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-4" data-name="Rectangle" width="1.599" height="1.599" transform="translate(30.502 36.866) rotate(-30.009)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-5" data-name="Rectangle" width="1.6" height="1.6" transform="translate(9.743 16.693) rotate(-59.999)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-6" data-name="Rectangle" width="1.6" height="1.6" transform="translate(36.067 31.895) rotate(-59.999)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-7" data-name="Rectangle" width="2" height="2" transform="translate(8 23)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-8" data-name="Rectangle" width="2" height="2" transform="translate(38 23)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-9" data-name="Rectangle" width="1.6" height="1.6" transform="translate(9.743 31.308) rotate(-29.993)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-10" data-name="Rectangle" width="1.6" height="1.6" transform="translate(36.067 16.107) rotate(-30.001)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-11" data-name="Rectangle" width="1.599" height="1.599" transform="translate(15.302 37.454) rotate(-59.991)" fill="url(#linear-gradient)"/>
+  <rect id="Rectangle-12" data-name="Rectangle" width="1.599" height="1.599" transform="translate(30.506 11.131) rotate(-59.991)" fill="url(#linear-gradient)"/>
+  <path id="Path" d="M7.437,0V12.154L0,16.65.805,18l7.816-4.725A.789.789,0,0,0,9,12.6V0Z" transform="translate(16 11)" fill="url(#linear-gradient)"/>
+</svg>

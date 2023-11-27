@@ -1,0 +1,38 @@
+.root {
+  @apply text-left mx-auto max-w-screen-container md:mt-[52px] px-[15px] flex flex-col;
+
+  .adminViewer {
+    @apply flex flex-col items-center;
+
+    .slideImage {
+      @apply flex flex-col items-center;
+
+      .imageText {
+        @apply w-full;
+      }
+    }
+  }
+
+  .imageViewer {
+    @apply animate-stretch1 flex flex-col rounded-3xl overflow-hidden self-start;
+
+    .slideImage {
+      @apply relative transform transition-transform hover:contents after:absolute after:w-full after:h-full hover:after:bg-[#3365A6] after:opacity-0 hover:after:opacity-80 after:transition-opacity after:duration-1000 cursor-pointer;
+
+      .imageText {
+        @apply absolute opacity-0 transition-opacity w-full h-full items-center justify-center text-white;
+      }
+    }
+
+    .slideImage:hover {
+      img {
+        @apply transition-transform duration-700 transform relative;
+        transform: rotate3d(0, 1, 0, 180deg);
+      }
+
+      .imageText {
+        @apply opacity-100 delay-500 duration-300 z-10 absolute w-full h-full flex items-center justify-center font-poppins;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="address" transform="translate(0)">
+    <path id="Shape" d="M.82,42a.82.82,0,0,1-.642-1.33l8.2-10.337a.82.82,0,0,1,.643-.311h7.186L10.075,20.4a13.125,13.125,0,1,1,21.851,0L25.79,30.023h7.187a.817.817,0,0,1,.642.311l8.2,10.337A.82.82,0,0,1,41.18,42Z" fill="#f37335"/>
+    <path id="Shape-2" data-name="Shape" d="M0,8a8,8,0,1,1,8,8A8.008,8.008,0,0,1,0,8Z" transform="translate(13 5)" fill="#f37335"/>
+  </g>
+</svg>

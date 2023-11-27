@@ -1,8 +1,17 @@
 import { types } from 'react-bricks/frontend'
 
-import HeroUnit from './custom/MyHeroUnit'
-import Pokemon from './custom/Pokemon'
 import reactBricksUITheme from './react-bricks-ui'
+
+import HomeBrick from './custom/Home'
+import AboutBrick from './custom/About'
+import ApproachBrick from './custom/Approach'
+import FoundationBrick from './custom/Foundation'
+import ContactBrick from './custom/Contact'
+
+import ScheduleBrick from './custom/Learn-more/Schedule'
+import AdjustBrick from './custom/Learn-more/Adjust'
+import AdmissionsBrick from './custom/Admissions'
+import SubHeaderBrick from './custom/SubHeader'
 
 const bricks: types.Theme[] = [
   reactBricksUITheme, // React Bricks UI
@@ -10,12 +19,40 @@ const bricks: types.Theme[] = [
     themeName: 'Default',
     categories: [
       {
-        categoryName: 'Hero sections',
-        bricks: [HeroUnit], // Custom Bricks
+        categoryName: 'Home Page',
+        bricks: [HomeBrick],
       },
       {
-        categoryName: 'Pokemon',
-        bricks: [Pokemon], // External data Bricks
+        categoryName: 'About Page',
+        bricks: [AboutBrick],
+      },
+      {
+        categoryName: 'Approach Page',
+        bricks: [ApproachBrick],
+      },
+      {
+        categoryName: 'Schedule Page',
+        bricks: [ScheduleBrick],
+      },
+      {
+        categoryName: 'Adjust Page',
+        bricks: [AdjustBrick],
+      },
+      {
+        categoryName: 'Foundation Page',
+        bricks: [FoundationBrick],
+      },
+      {
+        categoryName: 'Contact Page',
+        bricks: [ContactBrick],
+      },
+      {
+        categoryName: 'Admission Page',
+        bricks: [AdmissionsBrick],
+      },
+      {
+        categoryName: 'SubHeader Entity',
+        bricks: [SubHeaderBrick],
       },
     ],
   },

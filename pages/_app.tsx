@@ -13,7 +13,7 @@ const MyApp = (props: AppProps) => {
       enableSystem={false}
       defaultTheme="light"
     >
-      <ReactBricksApp {...props}></ReactBricksApp>
+      <ReactBricksApp {...props} />
     </ThemeProvider>
   )
 }
