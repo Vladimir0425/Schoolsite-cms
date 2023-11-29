@@ -51,8 +51,8 @@ export function News() {
   }, [])
 
   return (
-    <div>
-      <div className="max-w-screen-container mx-auto grid grid-cols-5 md:grid-cols-7 gap-x-[20px] mb-20">
+    <div className="max-w-screen-container mx-auto px-4 container:px-0">
+      <div className="grid grid-cols-5 md:grid-cols-7 gap-x-[20px] mb-20">
         <div className="col-span-5 grid grid-cols-1 gap-y-20">
           {newsData.map((newsItem) => (
             <div

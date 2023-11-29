@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router'
+
 import { useState } from 'react'
 import {
   FaPhone,
@@ -7,8 +9,11 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from 'react-icons/fa6'
+
+import GoogleMapReact from 'google-map-react'
+
 import { Button } from '@/components/commons/Button'
-import { Logo } from '../layout/Logo'
+import { Logo } from '@/components/layout/Logo'
 
 import { HttpService } from '@/services'
 
@@ -18,15 +23,15 @@ interface LinkItem {
 }
 
 const FooterLinks: LinkItem[] = [
-  { name: 'About', href: '#' },
-  { name: 'Approach', href: '#' },
-  { name: 'Schedule a Meeting', href: '#' },
-  { name: 'Is Atlas Right for My Child', href: '#' },
-  { name: 'Events', href: '#' },
-  { name: 'Calendar', href: '#' },
-  { name: 'Our News', href: '#' },
-  { name: 'Admissions', href: '#' },
-  { name: 'Foundation', href: '#' },
+  { name: 'About', href: '/about' },
+  { name: 'Approach', href: '/approach' },
+  { name: 'Schedule a Meeting', href: '/learn-more/schedule' },
+  { name: 'Is Atlas Right for My Child', href: '/learn-more/adjust' },
+  { name: 'Events', href: '/learn-more/events' },
+  { name: 'Calendar', href: '/learn-more/calendar' },
+  { name: 'Our News', href: '/news' },
+  { name: 'Admissions', href: '/admissions' },
+  { name: 'Foundation', href: '/foundation' },
 ]
 
 interface IContact {
@@ -44,7 +49,19 @@ const initialContact: IContact = {
 }
 
 export function Footer() {
+  const router = useRouter()
+  const googleMapProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  }
   const [joinContact, setJoinContact] = useState<IContact>(initialContact)
+
+  const navigate = (path: string) => {
+    router.push(path)
+  }
 
   const onContactSubmit = () => {
     if (Object.values(joinContact).every((item) => item === '')) return
@@ -62,9 +79,9 @@ export function Footer() {
   }
 
   return (
-    <div className="mx-auto max-w-[1151px] px-[15px]">
-      <div className="bg-gradient-to-r from-[#FDC830] to-[#F37335] rounded-[40px] w-full px-[98px] py-[59px] grid grid-cols-1 md:grid-cols-6">
-        <div className="min-w-[192px]  md:col-span-2">
+    <div className="mx-auto max-w-screen-container px-4 container:px-0 w-full">
+      <div className="bg-gradient-to-r from-[#FDC830] to-[#F37335] rounded-[40px] w-full px-4 md:px-[98px] py-[59px]  grid grid-cols-1 mmd:grid-cols-3">
+        <div className="min-w-[192px] md:col-span-1">
           <p className="font-poppins font-bold text-[36px] text-[#2B2B2B]">
             Join us
           </p>
@@ -73,7 +90,7 @@ export function Footer() {
           </p>
           <Button content="Join Us" isLeft={true} onClick={onContactSubmit} />
         </div>
-        <div className="mt-[39px] md:col-span-4">
+        <div className="mt-[39px] md:col-span-2">
           <div className="justify-between gap-x-3 grid grid-cols-1 gap-y-5 md:grid-cols-3">
             <input
               value={joinContact.name}
@@ -104,7 +121,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full grid grid-cols-1 gap-y-5 px-[20px] md:grid-cols-2 md:gap-y-5 lg:grid-cols-4 mt-[67px] mb-[20px] pb-[67px] border-b-2">
+      <div className="w-full grid grid-cols-1 gap-y-5 px-[20px] sm:grid-cols-2 md:gap-y-5 lg:grid-cols-4 mt-[67px] mb-[20px] pb-[67px] border-b-2">
         <div className="max-w-[287px]">
           <Logo />
           <p>
@@ -120,7 +137,7 @@ export function Footer() {
             <div>
               <p className="text-[#2B2B2B] text-[14px]">Call</p>
               <p className="text-[12px] font-open-sans font-bold">
-                501 222 2252
+                954-324-7837
               </p>
             </div>
           </div>
@@ -142,7 +159,7 @@ export function Footer() {
             <div>
               <p className="text-[#2B2B2B] text-[14px]">Address</p>
               <p className="text-[12px] font-open-sans font-bold">
-                Franklin St, Greenpoint Ave
+                23123 State Road 7, Suite 107, Boca Raton, FL 33428
               </p>
             </div>
           </div>
@@ -150,12 +167,25 @@ export function Footer() {
         <div className="max-w-[180px] flex flex-col">
           <p className="font-poppins font-medium text-[18px]">Quick Links</p>
           {FooterLinks.map((item) => (
-            <a key={item.name} className="font-poppins font-medium text-[14px]">
+            <p
+              key={item.name}
+              className="font-poppins font-medium text-[14px]"
+              onClick={() => navigate(item.href)}
+            >
               {item.name}
-            </a>
+            </p>
           ))}
         </div>
-        <div className="max-w-[273px] h-[200px] w-[273px] bg-[#D8D8D8]"></div>
+        <div className="max-w-[273px] h-[200px] w-[273px]">
+          <GoogleMapReact
+            bootstrapURLKeys={{
+              key: 'AIzaSyAUR1UE9x-Kp71L0SG6OHBmBNY-__JpbNM',
+            }}
+            center={googleMapProps.center}
+            zoom={googleMapProps.zoom}
+            yesIWantToUseGoogleMapApiInternals
+          ></GoogleMapReact>
+        </div>
       </div>
       <div className="grid grid-cols-1 gap-y-3 px-[20px] py-10 lg:grid-cols-3 justify-between items-center">
         <span className="text-sm text-gray-600 font-open-sans">
@@ -163,14 +193,15 @@ export function Footer() {
         </span>
         <div>
           <a
-            href="#"
+            href="/terms-of-service"
             className="text-gray-600 hover:text-gray-800 transition-colors duration-150 font-open-sans font-medium"
           >
             Terms of Service
           </a>
           <span className="mx-2">/</span>
           <a
-            href="#"
+            target="_black"
+            href="/private-policy"
             className="text-gray-600 hover:text-gray-800 transition-colors duration-150 font-open-sans font-medium"
           >
             Privacy Policy

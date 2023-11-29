@@ -16,7 +16,7 @@ const BenefitCard: types.Brick<IBenefitCardProps> = ({
   name,
 }: IBenefitCardProps) => {
   return (
-    <div className="max-w-[273px] shadow-[0px_2px_10px_#15579914] rounded-[10px] pt-[10px] pb-[20px] px-[15px]">
+    <div className="min-h-[110px] shadow-[0px_2px_10px_#15579914] rounded-[10px] p-5 flex flex-col justify-between">
       <div
         className={clsx(
           `w-[37px] h-[37px] rounded-[37px] shrink-0 border-[1px] border-[#707070]`,

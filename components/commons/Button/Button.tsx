@@ -4,7 +4,7 @@ import { FaPaperPlane } from 'react-icons/fa6'
 
 export interface IButtonProps {
   content: string
-  isLeft: boolean
+  isLeft?: boolean
   disabled?: boolean
   className?: string
   onClick?: () => void
@@ -33,7 +33,9 @@ export function Button({
         <FaPaperPlane fill="#0E6BA8" />
       </div>
       <div className="flex items-center justify-center grow">
-        <p className="text-white font-poppins font-medium">{content}</p>
+        <p className="text-white font-poppins font-medium transform -translate-x-2">
+          {content}
+        </p>
       </div>
     </div>
   )

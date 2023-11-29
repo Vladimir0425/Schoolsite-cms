@@ -1,0 +1,6 @@
+.calendar {
+  @apply w-full;
+  & > div {
+    @apply w-full;
+  }
+}

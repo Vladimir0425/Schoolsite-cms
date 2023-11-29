@@ -90,7 +90,7 @@ const Adjust: types.Brick<IAdjustProps> = () => {
     <div className="px-4 container:px-0 max-w-screen-container mx-auto mb-20">
       <Text
         renderBlock={({ children }) => (
-          <h1 className="font-bold text-5xl leading-snug mb-[50px]">
+          <h1 className="text-3xl font-bold md:text-5xl md:leading-snug mb-[50px]">
             {children}
           </h1>
         )}

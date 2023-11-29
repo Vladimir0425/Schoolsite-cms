@@ -1,5 +1,5 @@
 .modePanel {
-  @apply min-w-[342px] py-[40.8px] font-poppins font-bold text-[38px] text-center text-white border-[1px] border-solid border-[#707070] rounded-[30px] cursor-pointer;
+  @apply min-w-[150px] sm:min-w-[300px] py-4 sm:py-10 font-poppins font-bold text-lg sm:text-4xl text-center text-white border-[1px] border-solid border-[#707070] rounded-[30px] cursor-pointer;
 }
 
 .normalMode {
@@ -11,7 +11,7 @@
 }
 
 .amountPanel {
-  @apply min-w-[342px] py-[40.8px] font-poppins font-bold text-[38px] text-center text-[#3365A6] border-[3px] border-solid border-[#707070] rounded-[30px] shadow-[0px_3px_6px_#00000029] cursor-pointer;
+  @apply min-w-[150px] sm:min-w-[200px] md:min-w-[300px] py-4 sm:py-10 font-poppins font-bold text-lg sm:text-4xl text-center text-[#3365A6] border-[3px] border-solid border-[#707070] rounded-[30px] shadow-[0px_3px_6px_#00000029] cursor-pointer;
 }
 
 .normalAmount {

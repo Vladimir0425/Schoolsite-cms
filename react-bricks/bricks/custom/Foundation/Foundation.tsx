@@ -29,7 +29,7 @@ const Foundation: types.Brick<IFoundationProps> = () => {
   }
 
   return (
-    <div className="max-w-[1153px] mx-auto mb-[54px]">
+    <div className="max-w-screen-container px-4 container:px-0 mx-auto mb-[54px]">
       <div className="my-[80px]">
         <RichText
           renderBlock={({ children }) => (
@@ -47,7 +47,7 @@ const Foundation: types.Brick<IFoundationProps> = () => {
           placeholder="Type here..."
         />
       </div>
-      <div className="flex justify-center gap-x-[50px] mb-[48.2px]">
+      <div className="flex justify-center gap-4 mb-[48.2px]">
         {['Give Once', 'Give Monthly'].map((mode: donModeType) => (
           <h1
             key={mode}
@@ -61,7 +61,7 @@ const Foundation: types.Brick<IFoundationProps> = () => {
           </h1>
         ))}
       </div>
-      <div className="flex justify-center gap-x-[32px] mb-[42px]">
+      <div className="flex flex-wrap justify-center gap-4 mb-[42px]">
         {[50, 100, 250].map((amount: donAmountType) => (
           <h1
             key={amount}
@@ -75,38 +75,46 @@ const Foundation: types.Brick<IFoundationProps> = () => {
           </h1>
         ))}
       </div>
-      <div className="max-w-[1069px] grid justify-center mb-[50px]">
-        <h1 className="font-poppins font-bold text-[48px] text-[#3365A6]">
+      <div className="w-full grid justify-center mb-[50px]">
+        <h1 className="font-poppins font-bold text-sm sm:text-4xl text-[#3365A6]">
           OTHER AMOUNT
         </h1>
         <div className="h-[3px] w-full bg-[#707070] mb-[68.5px]"></div>
-        <div className="font-poppins font-bold flex items-center gap-x-[40px]">
+        <div className="font-poppins font-bold flex items-center gap-x-6">
           <div
-            className="h-[50px] w-[50px] border-[3px] border-solid border-[#707070] flex items-center justify-center cursor-pointer"
+            className="w-6 sm:w-12 aspect-square border-[3px] border-solid border-[#707070] flex items-center justify-center cursor-pointer shrink-0"
             onClick={() => setCreditCheck(!creditCheck)}
           >
             {creditCheck ? (
-              <IoCheckmarkSharp fill="#707070" fontSize={48} />
+              <IoCheckmarkSharp
+                fill="#707070"
+                fontSize={48}
+                className="h-4 sm:h-10"
+              />
             ) : (
               <></>
             )}
           </div>
-          <h1 className="text-[36px]">
+          <h1 className="text-md sm:text-4xl">
             Add $4.00 to my donation to cover credit card fees
           </h1>
         </div>
-        <div className="font-poppins font-bold flex items-center gap-x-[40px] mt-[54px]">
+        <div className="font-poppins font-bold flex items-center gap-x-6 mt-8 sm:mt-[54px]">
           <div
-            className="h-[50px] w-[50px] border-[3px] border-solid border-[#707070] flex items-center justify-center cursor-pointer"
+            className="w-6 sm:w-12 aspect-square border-[3px] border-solid border-[#707070] flex items-center justify-center cursor-pointer shrink-0"
             onClick={() => setHonorCheck(!honorCheck)}
           >
             {honorCheck ? (
-              <IoCheckmarkSharp fill="#707070" fontSize={48} />
+              <IoCheckmarkSharp
+                fill="#707070"
+                fontSize={48}
+                className="h-4 sm:h-10"
+              />
             ) : (
               <></>
             )}
           </div>
-          <h1 className="text-[36px]">
+          <h1 className="text-md sm:text-4xl">
             Make this donation in someone's honor or memory
           </h1>
         </div>

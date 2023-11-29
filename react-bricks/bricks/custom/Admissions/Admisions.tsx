@@ -309,6 +309,7 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
           allowedFeatures={[
             types.RichTextFeatures.Heading1,
             types.RichTextFeatures.Heading2,
+            types.RichTextFeatures.Link,
           ]}
           propName="contactText"
         />

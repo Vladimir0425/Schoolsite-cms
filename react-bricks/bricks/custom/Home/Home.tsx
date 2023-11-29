@@ -153,32 +153,32 @@ const Home: types.Brick<HomeProps> = () => {
             propName="enrollText"
           />
         </div>
-        <div className="hidden sm:flex sm:justify-between sm:mx-[20px] lg:flex lg:gap-x-[24px] relative h-[600px]">
+        <div className="sm:flex sm:justify-between sm:mx-[20px] lg:flex lg:gap-x-[24px] sm:relative h-0 sm:h-[600px]">
           <Image
             alt="Bubble1"
             src={Charac1Icon}
-            className="animate-fadeInUp1 absolute -z-20"
+            className="animate-fadeInUp1 absolute top-0 sm:right-0 sm:left-0 -z-20 w-2/5 -right-3"
           />
-          <span className="animate-fadeInUp1 absolute top-0 right-0 w-[120px] h-[120px] rounded-full bg-gradient-to-b from-[#FDC830] to-[#F37335] -z-10" />
+          <span className="hidden sm:flex animate-fadeInUp1 absolute top-0 right-0 w-[120px] h-[120px] rounded-full bg-gradient-to-b from-[#FDC830] to-[#F37335] -z-30" />
           <Image
             alt="Bubble2"
             src={Charac2Icon}
-            className="animate-fadeInUp3 absolute bottom-[100px] left-[18%] -z-20"
+            className="hidden sm:flex animate-fadeInUp3 absolute bottom-[100px] left-[18%] -z-30"
           />
-          <span className="animate-fadeInUp1 absolute top-[200px] left-1/2 w-[50px] h-[50px] rounded-full bg-gradient-to-b from-[#FDC830] to-[#F37335] -z-10" />
+          <span className="hidden sm:flex animate-fadeInUp1 absolute top-[200px] left-1/2 w-[50px] h-[50px] rounded-full bg-gradient-to-b from-[#FDC830] to-[#F37335] -z-10" />
           <Image
             alt="Bubble3"
             src={Charac3Icon}
-            className="animate-fadeInUp2 absolute right-0 top-[200px] -z-20"
+            className="hidden sm:flex animate-fadeInUp2 absolute right-0 top-[200px] -z-20"
           />
-          <span className="animate-fadeInUp1 absolute top-1/2 left-0 w-20 h-20 bg-[#FDC830] rounded-full -z-10" />
+          <span className="hidden sm:flex animate-fadeInUp1 absolute top-1/2 left-0 w-20 h-20 bg-[#FDC830] rounded-full -z-10" />
           <Image
             alt="Bubble4"
             src={Charac4Icon}
-            className="animate-fadeInUp4 absolute bottom-0 right-[10%] -z-20"
+            className="hidden sm:flex animate-fadeInUp4 absolute bottom-0 right-[10%] -z-20"
           />
-          <span className="animate-fadeInUp1 absolute bottom-0 left-[30%] w-10 h-10 bg-gradient-to-b from-[#FDC830] to-[#F37335] rounded-full -z-10" />
-          <span className="animate-fadeInUp1 absolute -bottom-[50px] -left-8 lg:-left-[100px] w-24 h-24 bg-gradient-to-b from-[#FDC830] to-[#F37335] rounded-full -z-10" />
+          <span className="hidden sm:flex animate-fadeInUp1 absolute bottom-0 left-[30%] w-10 h-10 bg-gradient-to-b from-[#FDC830] to-[#F37335] rounded-full -z-10" />
+          <span className="hidden sm:flex animate-fadeInUp1 absolute -bottom-[50px] -left-8 lg:-left-[100px] w-24 h-24 bg-gradient-to-b from-[#FDC830] to-[#F37335] rounded-full -z-10" />
         </div>
       </div>
       <RichText

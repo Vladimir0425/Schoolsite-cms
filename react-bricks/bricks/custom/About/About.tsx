@@ -102,7 +102,7 @@ const About: types.Brick<AboutProps> = () => {
   return (
     <div className="w-full">
       <div className="px-4 container:px-0 max-w-screen-container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 mt-[144px] ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:mt-[144px]">
           <div className="mt-[29px]">
             <div className="text-[48px] text-[#2B2B2B] font-poppins font-bold mb-[31px] ml-[12.5px]">
               <RichText
@@ -125,15 +125,8 @@ const About: types.Brick<AboutProps> = () => {
               propName="mainText"
               placeholder="Type here..."
             />
-            <div className="ml-[36px]">
-              <Button
-                content="Apply"
-                isLeft={true}
-                onClick={() => navigate('/admissions')}
-              />
-            </div>
           </div>
-          <div className="relative md:animate-fadeInUp1">
+          <div className="relative md:animate-fadeInUp1 max-w-[450px]">
             <BImage
               alt="Character1"
               propName="ChImage1"
@@ -147,17 +140,17 @@ const About: types.Brick<AboutProps> = () => {
             <BImage
               alt="Character3"
               propName="ChImage3"
-              imageClassName="mt-[82px] ml-[30px] z-[10] rounded-full"
+              imageClassName="mt-[82px] ml-[30px] z-[10] rounded-full aspect-square"
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 mt-[167px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
           <BImage
             alt="Background"
-            imageClassName="md:animate-fadeInUp3 rounded-full"
+            imageClassName="hidden md:block md:animate-fadeInUp3 rounded-full"
             propName="BackImage"
           />
-          <div className="mt-[154px] ml-[20px]">
+          <div className="ml-[20px]">
             <RichText
               renderBlock={({ children }) => (
                 <p className="font-open-sans max-w-[566px] text-[#575757] text-[14px] mb-[21px]">
@@ -191,23 +184,22 @@ const About: types.Brick<AboutProps> = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 mt-[21px]">
-          <div className="mt-[91px] max-w-[563px]">
-            <div>
-              <RichText
-                renderBlock={({ children }) => (
-                  <p className="text-[#575757] text-[14px]">{children}</p>
-                )}
-                renderBold={({ children }) => (
-                  <span className="font-poppins font-bold text-[48px] text-[#2B2B2B]">
-                    {children}
-                  </span>
-                )}
-                allowedFeatures={[types.RichTextFeatures.Bold]}
-                propName="benefitText"
-              />
-            </div>
-            <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-48">
+          <div className="max-w-[563px]">
+            <RichText
+              renderBlock={({ children }) => (
+                <p className="text-[#575757] text-[14px]">{children}</p>
+              )}
+              renderBold={({ children }) => (
+                <span className="font-poppins font-bold text-[48px] text-[#2B2B2B]">
+                  {children}
+                </span>
+              )}
+              allowedFeatures={[types.RichTextFeatures.Bold]}
+              propName="benefitText"
+            />
+            <div></div>
+            {/*<div>
               <h1 className="font-[poppins] font-bold text-[#2B2B2B] text-[36px] mt-[56px]">
                 Request a Brochure
               </h1>
@@ -238,10 +230,10 @@ const About: types.Brick<AboutProps> = () => {
                 isLeft={false}
                 onClick={onContactSubmit}
               />
-            </div>
+              </div>*/}
           </div>
-          <div className="ml-[20px] flex w-full">
-            <div className="flex flex-col gap-y-[30px] grow shrink-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div className="flex flex-col gap-y-[30px] w-full">
               {benefitCardItems1.map((item) => (
                 <BenefitCard
                   key={item.propName}
@@ -252,7 +244,7 @@ const About: types.Brick<AboutProps> = () => {
                 />
               ))}
             </div>
-            <div className="mt-[64px] flex flex-col gap-y-[30px] grow shrink-0">
+            <div className="md:mt-[64px] flex flex-col gap-y-[30px] w-full">
               {benefitCardItems2.map((item) => (
                 <BenefitCard
                   key={item.propName}

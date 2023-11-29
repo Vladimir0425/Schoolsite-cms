@@ -13,6 +13,7 @@ import {
   FaXmark,
 } from 'react-icons/fa6'
 import { FaBars } from 'react-icons/fa'
+import { Button } from '@/components/commons/Button'
 import { Logo } from './Logo'
 
 import { useOnClickOutside } from '@/utils/hook/useOnClickOutside'
@@ -127,6 +128,11 @@ export function Header() {
     }
   }
 
+  const onLearnNavClick = (item: any, childItem: any) => () => {
+    navigate(`${item.src}${childItem.src}`)
+    setIsSidebar(false)
+  }
+
   useEffect(() => {
     window.addEventListener('resize', onWindowResize)
     useOnClickOutside(subNavbarRef, () => setIsLearnMenu(false), 'mousedown')
@@ -139,7 +145,7 @@ export function Header() {
 
   return (
     <div className="max-w-[1151px] mx-auto mt-[10px] mb-[25px] w-full">
-      <div className="flex items-center justify-center sm:justify-between mt-[10.3px] mb-[37.4px] font-poppins font-medium sm:mx-[15px]">
+      <div className="flex items-center sm:justify-between mt-[10.3px] mb-[37.4px] font-poppins font-medium sm:mx-[15px]">
         <Logo />
         <div className="hidden sm:flex gap-x-5 items-center">
           <span className="w-7 h-7 flex rounded-full items-center justify-center bg-[#F69B03] shrink-0">
@@ -147,7 +153,7 @@ export function Header() {
           </span>
           <div>
             <p className="text-[#2B2B2B] text-[14px]">Call</p>
-            <p className="text-[12px] text-[#575757]">501 222 2252</p>
+            <p className="text-[12px] text-[#575757]">954-324-7837</p>
           </div>
         </div>
         <div className="hidden sm:flex gap-x-5 items-center">
@@ -166,25 +172,30 @@ export function Header() {
           <div>
             <p className="text-[#2B2B2B] text-[14px]">Address</p>
             <p className="text-[12px] text-[#575757]">
-              Franklin St, Greenpoint Ave
+              23123 State Road 7, Suite 107, Boca Raton, FL 33428
             </p>
           </div>
         </div>
       </div>
-      <span className="mmd:hidden">
+      <div className="mmd:hidden flex pr-4 items-center">
         <FaBars
           onClick={() => setIsSidebar(true)}
           className="mx-[15px] w-[32px] h-[32px] cursor-pointer"
           fill="#135E9E"
         />
-      </span>
+        <Button
+          content="Apply"
+          onClick={() => navigate('/admissions')}
+          className="mt-0 grow"
+        />
+      </div>
       <div
         className={`fixed top-0 left-0 h-full z-10 w-full flex transform transition-transform duration-300 ease-in-out -translate-x-full ${
           isSidebar ? 'translate-x-0' : ''
         } mmd:hidden`}
       >
         <ul
-          className={`bg-[#f08741] w-[400px] h-full font-poppins font-medium text-white text-[18px] md:hidden`}
+          className={`bg-[#f08741] w-[400px] h-full font-poppins font-medium text-white text-[18px]`}
           ref={sidebarRef}
         >
           <li className="pl-[15px] pt-[15px] cursor-pointer">
@@ -224,7 +235,7 @@ export function Header() {
                       <li
                         className="pt-[15px] pl-[10px]"
                         key={childItem.id}
-                        onClick={() => navigate(`${item.src}${childItem.src}`)}
+                        onClick={onLearnNavClick(item, childItem)}
                       >
                         <a className="">{childItem.title}</a>
                       </li>

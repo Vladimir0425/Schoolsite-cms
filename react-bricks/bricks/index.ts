@@ -10,6 +10,8 @@ import ContactBrick from './custom/Contact'
 
 import ScheduleBrick from './custom/Learn-more/Schedule'
 import AdjustBrick from './custom/Learn-more/Adjust'
+import EventsBrick from './custom/Learn-more/Events'
+
 import AdmissionsBrick from './custom/Admissions'
 import SubHeaderBrick from './custom/SubHeader'
 
@@ -39,16 +41,20 @@ const bricks: types.Theme[] = [
         bricks: [AdjustBrick],
       },
       {
+        categoryName: 'Events Page',
+        bricks: [EventsBrick],
+      },
+      {
         categoryName: 'Foundation Page',
         bricks: [FoundationBrick],
       },
       {
-        categoryName: 'Contact Page',
-        bricks: [ContactBrick],
-      },
-      {
         categoryName: 'Admission Page',
         bricks: [AdmissionsBrick],
+      },
+      {
+        categoryName: 'Contact Page',
+        bricks: [ContactBrick],
       },
       {
         categoryName: 'SubHeader Entity',
