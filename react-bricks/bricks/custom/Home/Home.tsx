@@ -204,9 +204,15 @@ const Home: types.Brick<HomeProps> = () => {
           >
             <div className="flex items-center gap-x-[11.72px] md:flex md:flex-col md:items-start lg:flex lg:flex-row lg:items-center lg:gap-x-[11.72px]">
               <Image alt={`Info-${index}`} src={text.image} />
-              <h1 className="font-poppins font-medium text-[30px] md:text-[35px] text-[#2B2B2B]">
-                {text.title}
-              </h1>
+              <Text
+                renderBlock={({ children }) => (
+                  <h1 className="min-w-[200px] font-poppins font-medium text-[30px] md:text-[35px] text-[#2B2B2B]">
+                    {children}
+                  </h1>
+                )}
+                placeholder="Type here..."
+                propName={`welcomeText${index}`}
+              />
             </div>
             <Text
               renderBlock={(props) => (
