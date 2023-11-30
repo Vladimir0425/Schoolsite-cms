@@ -25,10 +25,10 @@ const Contact: types.Brick<IContactProps> = () => {
   const [contact, setContact] = useState(initialContact)
   const googleMapProps = {
     center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
+      lat: 26.3324684,
+      lng: -80.2088306,
     },
-    zoom: 11,
+    zoom: 17,
   }
 
   const onContactUpdate = (field: string) => (value: any) => {

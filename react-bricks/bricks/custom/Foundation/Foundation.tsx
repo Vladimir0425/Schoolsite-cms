@@ -28,6 +28,14 @@ const Foundation: types.Brick<IFoundationProps> = () => {
     setDonAmount(donAmount === amount ? 0 : amount)
   }
 
+  const onPayClick = () => {
+    const link = document.createElement('a')
+    link.href =
+      'https://connect.intuit.com/portal/app/CommerceNetwork/view/scs-v1-d770873762304e4dbb026f5b41a6d377db5e0c18ba6e41f1af177629b90341504136ab4255aa4c978a761d9ed0887955?locale=EN_US'
+    link.target = '_blank'
+    link.click()
+  }
+
   return (
     <div className="max-w-screen-container px-4 container:px-0 mx-auto mb-[54px]">
       <div className="my-[80px]">
@@ -119,7 +127,12 @@ const Foundation: types.Brick<IFoundationProps> = () => {
           </h1>
         </div>
       </div>
-      <Button content="NEXT" isLeft={true} className="mx-auto" />
+      <Button
+        content="Pay Now"
+        isLeft={true}
+        className="mx-auto"
+        onClick={onPayClick}
+      />
     </div>
   )
 }

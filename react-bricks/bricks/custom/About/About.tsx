@@ -92,8 +92,8 @@ const About: types.Brick<AboutProps> = () => {
   }
 
   const onContactSubmit = () => {
-    if (Object.values(contact).every((item) => item === '')) return
-    const body = { ...contact, type: 'brochure' }
+    // if (Object.values(contact).every((item) => item === '')) return
+    // const body = { ...contact, type: 'brochure' }
     // HttpService.post('/message', body).then((res) => {
     //   setContact(initialContact)
     // })
@@ -198,7 +198,6 @@ const About: types.Brick<AboutProps> = () => {
               allowedFeatures={[types.RichTextFeatures.Bold]}
               propName="benefitText"
             />
-            <div></div>
             {/*<div>
               <h1 className="font-[poppins] font-bold text-[#2B2B2B] text-[36px] mt-[56px]">
                 Request a Brochure
@@ -232,8 +231,13 @@ const About: types.Brick<AboutProps> = () => {
               />
               </div>*/}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            <div className="flex flex-col gap-y-[30px] w-full">
+          {/* <div className="grid grid-cols-1 gap-8 w-full"> */}
+          <BImage
+            alt="Background"
+            imageClassName="rb-lazy hidden aspect-square md:block md:animate-fadeInUp3 rounded-full w-full max-w-[500px]"
+            propName="BackImage2"
+          />
+          {/* <div className="flex flex-col gap-y-[30px] w-full">
               {benefitCardItems1.map((item) => (
                 <BenefitCard
                   key={item.propName}
@@ -243,8 +247,8 @@ const About: types.Brick<AboutProps> = () => {
                   name={item.propName}
                 />
               ))}
-            </div>
-            <div className="md:mt-[64px] flex flex-col gap-y-[30px] w-full">
+            </div> */}
+          {/* <div className="md:mt-[64px] flex flex-col gap-y-[30px] w-full">
               {benefitCardItems2.map((item) => (
                 <BenefitCard
                   key={item.propName}
@@ -254,8 +258,8 @@ const About: types.Brick<AboutProps> = () => {
                   name={item.propName}
                 />
               ))}
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
         <div className="flex justify-center mt-[58px]">
           <div className="max-w-[1166px] flex flex-col mb-[92px]">

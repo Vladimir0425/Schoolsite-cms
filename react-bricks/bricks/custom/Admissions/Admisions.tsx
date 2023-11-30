@@ -82,12 +82,22 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
     })
   }
 
-  const onPayClick = () => {}
+  const onPayClick = () => {
+    const link = document.createElement('a')
+    link.href =
+      'https://connect.intuit.com/portal/app/CommerceNetwork/view/scs-v1-d770873762304e4dbb026f5b41a6d377db5e0c18ba6e41f1af177629b90341504136ab4255aa4c978a761d9ed0887955?locale=EN_US'
+    link.target = '_blank'
+    link.click()
+  }
 
   return (
     <div className="px-4 container:px-0 max-w-screen-container mx-auto font-open-sans text-[#575757] text-[14px]">
       <RichText
         renderBlock={({ children }) => <p className="mb-4">{children}</p>}
+        renderH1={({ children }) => (
+          <h1 className="text-6xl mb-[20px]">{children}</h1>
+        )}
+        allowedFeatures={[types.RichTextFeatures.Heading1]}
         propName="headText"
       />
       <div className="max-w-[860px] mt-[40px] grid grid-cols-1 gap-y-[21px]">

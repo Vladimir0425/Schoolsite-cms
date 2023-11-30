@@ -163,7 +163,7 @@ const Home: types.Brick<HomeProps> = () => {
           <Image
             alt="Bubble2"
             src={Charac2Icon}
-            className="hidden sm:flex animate-fadeInUp3 absolute bottom-[100px] left-[18%] -z-30"
+            className="hidden sm:flex animate-fadeInUp3 absolute bottom-[100px] left-[18%] -z-20"
           />
           <span className="hidden sm:flex animate-fadeInUp1 absolute top-[200px] left-1/2 w-[50px] h-[50px] rounded-full bg-gradient-to-b from-[#FDC830] to-[#F37335] -z-10" />
           <Image
@@ -427,7 +427,7 @@ const Home: types.Brick<HomeProps> = () => {
                 <div
                   className={isAdmin ? styles.adminViewer : styles.imageViewer}
                 >
-                  <div className={styles.slideImage}>
+                  {/* <div className={styles.slideImage}>
                     <BImage alt="Person10" propName="sliderImage10" />
                     <div className={styles.imageText}>
                       <Text
@@ -438,7 +438,7 @@ const Home: types.Brick<HomeProps> = () => {
                         placeholder="Type title here..."
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -448,7 +448,7 @@ const Home: types.Brick<HomeProps> = () => {
         )}
       </div>
       <div className="w-full text-center clear-left mt-[80px] mb-[208px]">
-        <Text
+        {/* <Text
           renderBlock={({ children }) => (
             <h1 className="font-poppins font-bold text-4xl md:text-5xl text-[#2B2B2B]">
               {children}
@@ -456,8 +456,8 @@ const Home: types.Brick<HomeProps> = () => {
           )}
           propName="newsHead"
           placeholder="Type news here..."
-        />
-        <Text
+        /> */}
+        {/* <Text
           renderBlock={({ children }) => (
             <p className="font-open-sans text-[#575757] text-[14px] pb-[15px] mb-[38px]">
               {children}
@@ -465,7 +465,7 @@ const Home: types.Brick<HomeProps> = () => {
           )}
           propName="newsText"
           placeholder="Type news here..."
-        />
+        /> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-5">
           {newsData.map((item: any, index: number) => (

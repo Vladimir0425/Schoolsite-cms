@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
-import SvgLogo from '@/public/assets/Atlas-mark-recolor.png'
+// import SvgLogo from '@/public/assets/Atlas-mark-recolor.png'
+import SvgLogo from '@/public/assets/logo.svg'
 
 export function Logo() {
   return (

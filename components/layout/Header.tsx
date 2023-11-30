@@ -56,23 +56,23 @@ const routeItems: RouteItem[] = [
         title: 'Is Atlas Right for My Child',
         src: '/adjust',
       },
-      {
-        id: 2,
-        title: 'Events',
-        src: '/events',
-      },
-      {
-        id: 3,
-        title: 'School Calendar',
-        src: '/calendar',
-      },
+      // {
+      //   id: 2,
+      //   title: 'Events',
+      //   src: '/events',
+      // },
+      // {
+      //   id: 3,
+      //   title: 'School Calendar',
+      //   src: '/calendar',
+      // },
     ],
   },
-  {
-    id: 4,
-    title: 'News',
-    src: '/news',
-  },
+  // {
+  //   id: 4,
+  //   title: 'News',
+  //   src: '/news',
+  // },
   {
     id: 5,
     title: 'Admissions',
@@ -183,11 +183,13 @@ export function Header() {
           className="mx-[15px] w-[32px] h-[32px] cursor-pointer"
           fill="#135E9E"
         />
-        <Button
-          content="Apply"
-          onClick={() => navigate('/admissions')}
-          className="mt-0 grow"
-        />
+        {!pathname.startsWith('/home') && (
+          <Button
+            content="Apply"
+            onClick={() => navigate('/admissions')}
+            className="mt-0 grow"
+          />
+        )}
       </div>
       <div
         className={`fixed top-0 left-0 h-full z-10 w-full flex transform transition-transform duration-300 ease-in-out -translate-x-full ${

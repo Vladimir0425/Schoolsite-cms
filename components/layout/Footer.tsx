@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { useSnackbar } from 'notistack'
 
 import { useState } from 'react'
 import {
@@ -27,9 +28,9 @@ const FooterLinks: LinkItem[] = [
   { name: 'Approach', href: '/approach' },
   { name: 'Schedule a Meeting', href: '/learn-more/schedule' },
   { name: 'Is Atlas Right for My Child', href: '/learn-more/adjust' },
-  { name: 'Events', href: '/learn-more/events' },
-  { name: 'Calendar', href: '/learn-more/calendar' },
-  { name: 'Our News', href: '/news' },
+  // { name: 'Events', href: '/learn-more/events' },
+  // { name: 'Calendar', href: '/learn-more/calendar' },
+  // { name: 'Our News', href: '/news' },
   { name: 'Admissions', href: '/admissions' },
   { name: 'Foundation', href: '/foundation' },
 ]
@@ -49,14 +50,16 @@ const initialContact: IContact = {
 }
 
 export function Footer() {
-  const router = useRouter()
   const googleMapProps = {
     center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
+      lat: 26.3324684,
+      lng: -80.2088306,
     },
-    zoom: 11,
+    zoom: 17,
   }
+
+  const router = useRouter()
+  const { enqueueSnackbar } = useSnackbar()
   const [joinContact, setJoinContact] = useState<IContact>(initialContact)
 
   const navigate = (path: string) => {
@@ -64,11 +67,19 @@ export function Footer() {
   }
 
   const onContactSubmit = () => {
-    if (Object.values(joinContact).every((item) => item === '')) return
+    if (Object.values(joinContact).every((item) => item === '')) {
+      enqueueSnackbar('Input correct information!', { variant: 'warning' })
+      return
+    }
     const body = { ...joinContact, type: 'joining' }
-    HttpService.post('/message', body).then((res) => {
-      setJoinContact(initialContact)
-    })
+    HttpService.post('/message', body)
+      .then((res) => {
+        setJoinContact(initialContact)
+        enqueueSnackbar('Successfully Sent!', { variant: 'success' })
+      })
+      .catch((err) => {
+        enqueueSnackbar('Error occured while joining!', { variant: 'error' })
+      })
   }
 
   const onContactUpdate = (field: string) => (e: any) => {
@@ -169,7 +180,7 @@ export function Footer() {
           {FooterLinks.map((item) => (
             <p
               key={item.name}
-              className="font-poppins font-medium text-[14px]"
+              className="font-poppins font-medium text-[14px] cursor-pointer hover:underline"
               onClick={() => navigate(item.href)}
             >
               {item.name}

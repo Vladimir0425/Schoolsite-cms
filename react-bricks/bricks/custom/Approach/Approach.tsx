@@ -12,6 +12,7 @@ import { FaPhone, FaLocationDot } from 'react-icons/fa6'
 import { HttpService } from '@/services'
 
 import ClockIcon from '@/public/assets/approach/clock.svg'
+import TaskImage from '@/public/assets/approach/task.png'
 
 interface IContact {
   name: string
@@ -114,7 +115,8 @@ const Approach: types.Brick<IApproachProps> = () => {
             ]}
             propName="subText"
           />
-          <Button content="Enroll Now" isLeft={true} />
+          {/* <Button content="Enroll Now" isLeft={true} /> */}
+          <Image alt="Task Image" src={TaskImage} />
         </div>
         <div className="col-span-5 mt-[50px] md:col-span-2">
           <div className="py-[50px] px-[11px] rounded-[23px] border-[1px] border-[#F37335] shadow-[0px_2px_10px_#15579914]">

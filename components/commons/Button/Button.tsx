@@ -4,6 +4,7 @@ import { FaPaperPlane } from 'react-icons/fa6'
 
 export interface IButtonProps {
   content: string
+  isAdornment?: boolean
   isLeft?: boolean
   disabled?: boolean
   className?: string
@@ -13,6 +14,7 @@ export interface IButtonProps {
 export function Button({
   content,
   isLeft,
+  isAdornment = true,
   disabled = false,
   className = '',
   onClick = () => {},
@@ -29,11 +31,18 @@ export function Button({
       )}
       onClick={!disabled ? onClick : () => {}}
     >
-      <div className="bg-white h-[27px] w-[27px] rounded-[27px] flex items-center justify-center shrink-0">
-        <FaPaperPlane fill="#0E6BA8" />
-      </div>
+      {isAdornment && (
+        <div className="bg-white h-[27px] w-[27px] rounded-[27px] flex items-center justify-center shrink-0">
+          <FaPaperPlane fill="#0E6BA8" />
+        </div>
+      )}
       <div className="flex items-center justify-center grow">
-        <p className="text-white font-poppins font-medium transform -translate-x-2">
+        <p
+          className={clsx(
+            'text-white font-poppins font-medium transform',
+            isAdornment ? '-translate-x-1' : ''
+          )}
+        >
           {content}
         </p>
       </div>
