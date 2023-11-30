@@ -85,7 +85,7 @@ const routeItems: RouteItem[] = [
   },
   {
     id: 7,
-    title: 'Contacts',
+    title: 'Contact Us',
     src: '/contacts',
   },
 ]
