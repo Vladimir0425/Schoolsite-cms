@@ -32,12 +32,14 @@ const SubHeader: types.Brick<ISubHeaderProps> = () => {
           className="absolute bottom-0 right-8"
         />
       </div>
-      <div className="bg-[#F2A71B] flex items-center justify-center gap-x-3 border-y-2 border-[#707070] pt-[31px] pb-[16px] text-[36px] text-[white] font-poppins font-bold">
-        <h1>Thrive in Knowledge</h1>
-        <div className="bg-[#3365A6] w-[24px] h-[24px] rounded-full shrink-0 border-[1px #707070]"></div>
-        <h1>Grow in Character</h1>
-        <div className="bg-[#3365A6] w-[24px] h-[24px] rounded-full shrink-0 border-[1px #707070]"></div>
-        <h1>Embrance Excellent</h1>
+      <div className="bg-[#F2A71B] border-y-2 border-[#707070] pt-[31px] pb-[16px] text-[36px] text-[white] font-poppins font-bold">
+        <div className="max-w-screen-container mx-auto flex items-center justify-center gap-x-8">
+          <h1 className="tracking-wider">Engaged</h1>
+          <span className="bg-[#3365A6] w-[24px] h-[24px] rounded-full shrink-0 border-[1px #707070]" />
+          <h1 className="tracking-wider">Secure</h1>
+          <span className="bg-[#3365A6] w-[24px] h-[24px] rounded-full shrink-0 border-[1px #707070]" />
+          <h1 className="tracking-wider">Prepared</h1>
+        </div>
       </div>
     </div>
   )

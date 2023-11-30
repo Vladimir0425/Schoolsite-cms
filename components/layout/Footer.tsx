@@ -99,7 +99,9 @@ export function Footer() {
           <p className="font-poppins font-bold text-[36px] text-[#2B2B2B] mt-[-13px]">
             and stay tuned
           </p>
-          <Button content="Join Us" isLeft={true} onClick={onContactSubmit} />
+          <div className="w-[180px]">
+            <Button content="Join Us" isLeft={true} onClick={onContactSubmit} />
+          </div>
         </div>
         <div className="mt-[39px] md:col-span-2">
           <div className="justify-between gap-x-3 grid grid-cols-1 gap-y-5 md:grid-cols-3">
@@ -132,15 +134,18 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full grid grid-cols-1 gap-y-5 px-[20px] sm:grid-cols-2 md:gap-y-5 lg:grid-cols-4 mt-[67px] mb-[20px] pb-[67px] border-b-2">
-        <div className="max-w-[287px]">
+      <div className="w-full grid grid-cols-1 gap-y-5 px-[20px] sm:grid-cols-2 md:gap-y-5 lg:grid-cols-5 mt-[67px] mb-[20px] pb-[67px] border-b-2">
+        <div className="max-w-[400px] lg:col-span-2">
           <Logo />
-          <p>
-            Vivamus porta efficitur nibh nec convallis. Vestibulum egestas
-            eleifend justo. Ut tellus ipsum, accumsan
+          <p className="text-sm">
+            Atlas Academics is a part of a larger microschool movement across
+            Florida, providing an alternative to families unsatisfied with
+            traditional school options. We focus on mastery-based learning, life
+            abilities, critical thinking, encouraging curiosity, maturing grit
+            through failure, and real-world application of knowledge.
           </p>
         </div>
-        <div className="max-w-[200px]">
+        <div className="max-w-[200px] lg:col-span-1">
           <div className="flex gap-x-5 items-center">
             <span className="w-5 h-5 flex rounded-full items-center justify-center bg-[#0E6BA8] shrink-0">
               <FaPhone fill="white" className="w-[12px] h-[12px]" />
@@ -175,7 +180,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="max-w-[180px] flex flex-col">
+        <div className="max-w-[180px] flex flex-col lg:col-span-1">
           <p className="font-poppins font-medium text-[18px]">Quick Links</p>
           {FooterLinks.map((item) => (
             <p
@@ -187,7 +192,7 @@ export function Footer() {
             </p>
           ))}
         </div>
-        <div className="max-w-[273px] h-[200px] w-[273px]">
+        <div className="max-w-[273px] h-[200px] w-[273px] lg:col-span-1">
           <GoogleMapReact
             bootstrapURLKeys={{
               key: 'AIzaSyAUR1UE9x-Kp71L0SG6OHBmBNY-__JpbNM',

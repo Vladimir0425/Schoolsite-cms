@@ -1,0 +1,5 @@
+.child-item > *,
+.flex {
+  flex-grow: 0;
+  max-width: none;
+}

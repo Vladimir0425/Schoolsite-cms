@@ -1,40 +1,33 @@
 import { types } from 'react-bricks/frontend'
 import { RichText } from 'react-bricks/frontend'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IoCheckmarkSharp } from 'react-icons/io5'
 
 import { Button } from '@/components/commons/Button'
 
 import clsx from 'clsx'
-import styles from './Foundation.module.scss'
 
 interface IFoundationProps {}
 
-type donModeType = '' | 'Give Once' | 'Give Monthly'
-type donAmountType = 50 | 100 | 250 | 0
-
 const Foundation: types.Brick<IFoundationProps> = () => {
-  const [donMode, setDonMode] = useState<donModeType>('Give Once')
-  const [donAmount, setDonAmount] = useState<donAmountType>(50)
-  const [creditCheck, setCreditCheck] = useState(false)
-  const [honorCheck, setHonorCheck] = useState(false)
+  useEffect(() => {
+    const styleLink = document.createElement('link')
+    styleLink.rel = 'stylesheet'
+    styleLink.href =
+      'https://ribbon-public-bucket.s3.amazonaws.com/donation-embed/css/ribbon-donation-embed.css'
+    document.head.appendChild(styleLink)
 
-  const onFeeModeChange = (mode: donModeType) => {
-    setDonMode(donMode === mode ? '' : mode)
-  }
+    const scriptLink = document.createElement('script')
+    scriptLink.src =
+      'https://ribbon-public-bucket.s3.amazonaws.com/donation-embed/js/ribbon-donation-embed.js'
+    document.head.appendChild(scriptLink)
 
-  const onDonAmountChange = (amount: donAmountType) => {
-    setDonAmount(donAmount === amount ? 0 : amount)
-  }
-
-  const onPayClick = () => {
-    const link = document.createElement('a')
-    link.href =
-      'https://connect.intuit.com/portal/app/CommerceNetwork/view/scs-v1-d770873762304e4dbb026f5b41a6d377db5e0c18ba6e41f1af177629b90341504136ab4255aa4c978a761d9ed0887955?locale=EN_US'
-    link.target = '_blank'
-    link.click()
-  }
+    const ribbonLink = document.createElement('link')
+    ribbonLink.rel = 'stylesheet'
+    ribbonLink.href = '/ribbon.css'
+    document.head.appendChild(ribbonLink)
+  }, [])
 
   return (
     <div className="max-w-screen-container px-4 container:px-0 mx-auto mb-[54px]">
@@ -55,84 +48,13 @@ const Foundation: types.Brick<IFoundationProps> = () => {
           placeholder="Type here..."
         />
       </div>
-      <div className="flex justify-center gap-4 mb-[48.2px]">
-        {['Give Once', 'Give Monthly'].map((mode: donModeType) => (
-          <h1
-            key={mode}
-            className={clsx(
-              styles.modePanel,
-              donMode === mode ? styles.activeMode : styles.normalMode
-            )}
-            onClick={() => onFeeModeChange(mode)}
-          >
-            {mode}
-          </h1>
-        ))}
+      <div className="ribbon-donation-embed-container flex justify-center">
+        <ribbon-donation-embed
+          id="ribbon-donation-embed"
+          form_uuid="chem_OTzNO2spcx7GWdeg"
+          dialog="false"
+        />
       </div>
-      <div className="flex flex-wrap justify-center gap-4 mb-[42px]">
-        {[50, 100, 250].map((amount: donAmountType) => (
-          <h1
-            key={amount}
-            className={clsx(
-              styles.amountPanel,
-              donAmount === amount ? styles.activeAmount : styles.normalAmount
-            )}
-            onClick={() => onDonAmountChange(amount)}
-          >
-            ${amount}
-          </h1>
-        ))}
-      </div>
-      <div className="w-full grid justify-center mb-[50px]">
-        <h1 className="font-poppins font-bold text-sm sm:text-4xl text-[#3365A6]">
-          OTHER AMOUNT
-        </h1>
-        <div className="h-[3px] w-full bg-[#707070] mb-[68.5px]"></div>
-        <div className="font-poppins font-bold flex items-center gap-x-6">
-          <div
-            className="w-6 sm:w-12 aspect-square border-[3px] border-solid border-[#707070] flex items-center justify-center cursor-pointer shrink-0"
-            onClick={() => setCreditCheck(!creditCheck)}
-          >
-            {creditCheck ? (
-              <IoCheckmarkSharp
-                fill="#707070"
-                fontSize={48}
-                className="h-4 sm:h-10"
-              />
-            ) : (
-              <></>
-            )}
-          </div>
-          <h1 className="text-md sm:text-4xl">
-            Add $4.00 to my donation to cover credit card fees
-          </h1>
-        </div>
-        <div className="font-poppins font-bold flex items-center gap-x-6 mt-8 sm:mt-[54px]">
-          <div
-            className="w-6 sm:w-12 aspect-square border-[3px] border-solid border-[#707070] flex items-center justify-center cursor-pointer shrink-0"
-            onClick={() => setHonorCheck(!honorCheck)}
-          >
-            {honorCheck ? (
-              <IoCheckmarkSharp
-                fill="#707070"
-                fontSize={48}
-                className="h-4 sm:h-10"
-              />
-            ) : (
-              <></>
-            )}
-          </div>
-          <h1 className="text-md sm:text-4xl">
-            Make this donation in someone's honor or memory
-          </h1>
-        </div>
-      </div>
-      <Button
-        content="Pay Now"
-        isLeft={true}
-        className="mx-auto"
-        onClick={onPayClick}
-      />
     </div>
   )
 }

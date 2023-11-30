@@ -1,0 +1,19 @@
+/* .child-item > *,
+.flex {
+  flex-grow: 0 !important;
+  max-width: inherit !important;
+}*/
+
+button,
+input,
+select,
+textarea {
+  background-color: field !important;
+  border-style: inherit !important;
+}
+
+.flex {
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  max-width: none !important;
+}

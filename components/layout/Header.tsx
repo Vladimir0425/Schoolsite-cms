@@ -310,7 +310,7 @@ export function Header() {
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-x-3">
+        <div className="flex items-center gap-x-3 max-w-none">
           <a
             href="https://www.facebook.com/"
             target="_blank"

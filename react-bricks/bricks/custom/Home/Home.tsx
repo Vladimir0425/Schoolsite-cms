@@ -99,8 +99,38 @@ const Home: types.Brick<HomeProps> = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 mb-[106px]">
         <div className="mt-[22px]">
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl container:leading-[64px] container:text-[55px] font-[500] font-poppins">
-              <Text
+            <RichText
+              renderBlock={({ children }) => (
+                <div className="text-4xl container:leading-[64px] container:text-[55px] font-[500] font-poppins">
+                  {children}
+                </div>
+              )}
+              renderH1={({ children }) => (
+                <h1 className="text-[#3365A6] max-w-[400px] text-4xl container:leading-[64px] container:text-[55px] font-[500] font-poppins">
+                  {children}
+                </h1>
+              )}
+              renderH2={({ children }) => (
+                <h2 className="text-[#7891BF] text-4xl container:leading-[64px] container:text-[55px] font-[500] font-poppins">
+                  {children}
+                </h2>
+              )}
+              renderH3={({ children }) => (
+                <h3 className="text-[#C1C1C1] text-4xl container:leading-[64px] container:text-[55px] font-[500] font-poppins">
+                  {children}
+                </h3>
+              )}
+              allowedFeatures={[
+                types.RichTextFeatures.Heading1,
+                types.RichTextFeatures.Heading2,
+                types.RichTextFeatures.Heading3,
+              ]}
+              propName="headText"
+              placeholder="Type heading text here..."
+            />
+
+            {/* <h1 > */}
+            {/* <Text
                 renderBlock={(props) => (
                   <span className="text-[#3365A6]">{props.children}</span>
                 )}
@@ -123,7 +153,7 @@ const Home: types.Brick<HomeProps> = () => {
                 placeholder={'Type here...'}
                 propName="mainHead3"
               />
-            </h1>
+            </h1> */}
             <Text
               renderBlock={(props) => (
                 <p className="text-[#575757] mb-[20px] text-xm">
@@ -467,7 +497,7 @@ const Home: types.Brick<HomeProps> = () => {
           placeholder="Type news here..."
         /> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-5">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-5">
           {newsData.map((item: any, index: number) => (
             <div className="flex flex-col">
               <Image
@@ -502,7 +532,7 @@ const Home: types.Brick<HomeProps> = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div className="absolute top-0 right-0 transform translate-x-[16%] -translate-y-[14%] w-1/2 aspect-square rounded-full bg-[#F2F7FD] -z-30" />
     </div>

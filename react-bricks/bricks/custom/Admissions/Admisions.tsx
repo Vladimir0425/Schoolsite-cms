@@ -95,7 +95,9 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
       <RichText
         renderBlock={({ children }) => <p className="mb-4">{children}</p>}
         renderH1={({ children }) => (
-          <h1 className="text-6xl mb-[20px]">{children}</h1>
+          <h1 className="font-bold text-[36px] text-[#2B2B2B] mb-[20px]">
+            {children}
+          </h1>
         )}
         allowedFeatures={[types.RichTextFeatures.Heading1]}
         propName="headText"

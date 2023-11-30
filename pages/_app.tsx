@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import ReactBricksApp from '../components/ReactBricksApp'
 
 import '../css/styles.css'
+// import '@/css/ribbon.css'
 
 const MyApp = (props: AppProps) => {
   // useEffect(() => {
