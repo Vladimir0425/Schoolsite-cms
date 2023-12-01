@@ -59,13 +59,15 @@ const Approach: types.Brick<IApproachProps> = () => {
       <div className="grid grid-cols-5 md:grid-cols-7 gap-x-[51px] px-4 container:px-0 max-w-screen-container mx-auto">
         <div className="col-span-5 font-open-sans text-[14px] text-[#575757]">
           <RichText
-            renderBlock={({ children }) => <p className="mb-5">{children}</p>}
-            renderBold={({ children }) => (
-              <span className="font-poppins font-medium text-6xl leading-[1.1] text-[#2B2B2B]">
-                {children}
-              </span>
+            renderBlock={({ children }) => (
+              <p className="mb-[20px]">{children}</p>
             )}
-            allowedFeatures={[types.RichTextFeatures.Bold]}
+            renderH1={({ children }) => (
+              <h1 className="font-poppins font-medium text-[60px] text-[#3365A6] mb-[16px]">
+                {children}
+              </h1>
+            )}
+            allowedFeatures={[types.RichTextFeatures.Heading1]}
             propName="rightText"
             placeholder="Type here..."
           />
@@ -101,7 +103,7 @@ const Approach: types.Brick<IApproachProps> = () => {
           <RichText
             renderBlock={({ children }) => <p className="mb-5">{children}</p>}
             renderBold={({ children }) => (
-              <span className="font-poppins font-medium text-[20px] text-[#2B2B2B]">
+              <span className="font-poppins font-medium text-[20px] text-[#F69B03]">
                 {children}
               </span>
             )}

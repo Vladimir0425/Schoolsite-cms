@@ -95,7 +95,7 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
       <RichText
         renderBlock={({ children }) => <p className="mb-4">{children}</p>}
         renderH1={({ children }) => (
-          <h1 className="font-bold text-[36px] text-[#2B2B2B] mb-[20px]">
+          <h1 className="font-bold text-[36px] text-[#3365A6] mb-[20px]">
             {children}
           </h1>
         )}
@@ -214,7 +214,7 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
                 </p>
               )}
               renderH1={({ children }) => (
-                <span className="font-poppins font-medium text-[#2B2B2B] text-xl">
+                <span className="font-poppins font-medium text-[#3365A6] text-xl">
                   {children}
                 </span>
               )}

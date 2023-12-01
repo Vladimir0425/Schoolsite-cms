@@ -104,11 +104,11 @@ const About: types.Brick<AboutProps> = () => {
       <div className="px-4 container:px-0 max-w-screen-container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:mt-[144px]">
           <div className="mt-[29px]">
-            <div className="text-[48px] text-[#2B2B2B] font-poppins font-bold mb-[31px] ml-[12.5px]">
+            <div className="text-[60px] leading-tight text-[#2B2B2B] font-poppins font-bold mb-[31px]">
               <RichText
                 renderBlock={({ children }) => <h1>{children}</h1>}
                 renderHighlight={({ children }) => (
-                  <span className="text-[#F37335]">{children}</span>
+                  <span className="text-[#3365A6]">{children}</span>
                 )}
                 allowedFeatures={[types.RichTextFeatures.Highlight]}
                 propName="mainHead"
@@ -117,11 +117,16 @@ const About: types.Brick<AboutProps> = () => {
             </div>
             <RichText
               renderBlock={({ children }) => (
-                <p className="text-[#575757] font-open-sans max-w-[566px] mb-[31px]">
+                <p className="text-[#575757] font-open-sans max-w-[566px] mb-[20px]">
                   {children}
                 </p>
               )}
-              allowedFeatures={[types.RichTextFeatures.Highlight]}
+              renderH1={({ children }) => (
+                <h1 className="text-[40px] text-[#3365A6] font-poppins font-bold mb-[16px]">
+                  {children}
+                </h1>
+              )}
+              allowedFeatures={[types.RichTextFeatures.Heading1]}
               propName="mainText"
               placeholder="Type here..."
             />
@@ -153,14 +158,14 @@ const About: types.Brick<AboutProps> = () => {
           <div className="ml-[20px]">
             <RichText
               renderBlock={({ children }) => (
-                <p className="font-open-sans max-w-[566px] text-[#575757] text-[14px] mb-[21px]">
+                <p className="font-open-sans max-w-[566px] text-[#575757] text-[14px] mb-[20px]">
                   {children}
                 </p>
               )}
-              renderBold={({ children }) => (
-                <span className="font-poppins font-bold text-[48px] text-[#2B2B2B] mb-[21px]">
+              renderH1={({ children }) => (
+                <h1 className="font-poppins font-bold text-[40px] text-[#3365A6] mb-[16px]">
                   {children}
-                </span>
+                </h1>
               )}
               renderHighlight={({ children }) => (
                 <span className="font-poppins font-medium text-[#F37335] uppercase">
@@ -176,7 +181,7 @@ const About: types.Brick<AboutProps> = () => {
                 <li className="mb-[5px]">{children}</li>
               )}
               allowedFeatures={[
-                types.RichTextFeatures.Bold,
+                types.RichTextFeatures.Heading1,
                 types.RichTextFeatures.Highlight,
                 types.RichTextFeatures.UnorderedList,
               ]}
@@ -190,12 +195,24 @@ const About: types.Brick<AboutProps> = () => {
               renderBlock={({ children }) => (
                 <p className="text-[#575757] text-[14px]">{children}</p>
               )}
-              renderBold={({ children }) => (
-                <span className="font-poppins font-bold text-[48px] text-[#2B2B2B]">
+              renderH1={({ children }) => (
+                <h1 className="font-poppins font-bold text-[40px] mb-[16px] text-[#3365A6]">
                   {children}
-                </span>
+                </h1>
               )}
-              allowedFeatures={[types.RichTextFeatures.Bold]}
+              renderUL={({ children }) => (
+                <ul className="flex flex-col gap-y-1">{children}</ul>
+              )}
+              renderLI={({ children }) => (
+                <li className="text-[#575757] text-[14px] flex gap-x-1 items-start">
+                  <span className="mt-[8px] w-[4px] h-[4px] bg-[#575757] rounded-full shrink-0"></span>
+                  {children}
+                </li>
+              )}
+              allowedFeatures={[
+                types.RichTextFeatures.Heading1,
+                types.RichTextFeatures.UnorderedList,
+              ]}
               propName="benefitText"
             />
             {/*<div>
@@ -265,16 +282,28 @@ const About: types.Brick<AboutProps> = () => {
           <div className="max-w-[1166px] flex flex-col mb-[92px]">
             <RichText
               renderBlock={({ children }) => (
-                <div className="font-open-sans text-[#575757] text-[14px] mb-2">
+                <p className="font-open-sans text-[#575757] text-[14px] mb-[20px]">
                   {children}
-                </div>
+                </p>
               )}
-              renderBold={({ children }) => (
-                <h1 className="font-poppins font-bold text-[#2B2B2B] text-[48px]">
+              renderH1={({ children }) => (
+                <h1 className="font-poppins font-bold text-[#3365A6] text-[40px] mb-[16px]">
                   {children}
                 </h1>
               )}
-              allowedFeatures={[types.RichTextFeatures.Bold]}
+              renderUL={({ children }) => (
+                <ul className="flex flex-col gap-y-1">{children}</ul>
+              )}
+              renderLI={({ children }) => (
+                <li className="text-[#575757] text-[14px] flex gap-x-1 items-start">
+                  <span className="mt-[8px] w-[4px] h-[4px] bg-[#575757] rounded-full shrink-0"></span>
+                  {children}
+                </li>
+              )}
+              allowedFeatures={[
+                types.RichTextFeatures.Heading1,
+                types.RichTextFeatures.UnorderedList,
+              ]}
               propName="cultureText"
               placeholder="Type here..."
             />

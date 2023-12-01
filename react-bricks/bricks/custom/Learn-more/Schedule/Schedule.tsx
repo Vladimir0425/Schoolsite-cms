@@ -19,7 +19,9 @@ const Schedule: types.Brick<IScheduleProps> = () => {
     <div className="px-4 container:px-0 max-w-screen-container mx-auto">
       <Text
         renderBlock={({ children }) => (
-          <h1 className="text-6xl text-center font-bold mb-10">{children}</h1>
+          <h1 className="text-6xl text-center font-bold mb-10 text-[#3365A6]">
+            {children}
+          </h1>
         )}
         placeholder="Type heading text..."
         propName="headText"
