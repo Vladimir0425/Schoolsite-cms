@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router'
+import { useState } from 'react'
+import Calendar from 'react-calendar'
 
-import Calendar from 'react-beautiful-calendar'
 import { Input } from '@/components/forms/Input'
 
 import moment from 'moment'
 
 import styles from './Rightbar.module.scss'
+import 'react-calendar/dist/Calendar.css'
 
 export interface IRIghtbarProps {
   recentPosts: any[]
@@ -14,6 +16,7 @@ export interface IRIghtbarProps {
 
 export function Rightbar({ recentPosts, recentComments }: IRIghtbarProps) {
   const router = useRouter()
+  const [date, onDateChange] = useState(new Date())
 
   const navigate = (path: string) => {
     router.push(path)
@@ -21,10 +24,6 @@ export function Rightbar({ recentPosts, recentComments }: IRIghtbarProps) {
 
   const onCommentClick = (path: string) => () => {
     navigate(path)
-  }
-
-  const dateChangeHandler = ([date, month, year]) => {
-    // ...use the values here
   }
 
   return (
@@ -121,7 +120,7 @@ export function Rightbar({ recentPosts, recentComments }: IRIghtbarProps) {
           Calendar
         </h1>
         <div className={styles.calendar}>
-          <Calendar onDateChange={dateChangeHandler} />
+          <Calendar value={date} />
         </div>
       </div>
     </div>

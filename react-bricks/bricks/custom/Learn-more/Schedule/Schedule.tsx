@@ -52,19 +52,23 @@ const Schedule: types.Brick<IScheduleProps> = () => {
         )}
         <div className="flex gap-x-4 justify-end">
           {scheduleAnchor && (
+            <div className="w-[150px]">
+              <Button
+                content="Cancel"
+                isLeft={false}
+                onClick={() => setScheduleAnchor(false)}
+                className="ml-0 mr-0 shrink-0 min-w-[140px]"
+              />
+            </div>
+          )}
+          <div className="w-[150px]">
             <Button
-              content="Cancel"
+              content="Schedule"
               isLeft={false}
-              onClick={() => setScheduleAnchor(false)}
+              onClick={() => setScheduleAnchor(true)}
               className="ml-0 mr-0 shrink-0 min-w-[140px]"
             />
-          )}
-          <Button
-            content="Schedule"
-            isLeft={false}
-            onClick={() => setScheduleAnchor(true)}
-            className="ml-0 mr-0 shrink-0 min-w-[140px]"
-          />
+          </div>
         </div>
       </div>
     </div>

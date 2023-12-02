@@ -49,6 +49,7 @@ const Foundation: types.Brick<IFoundationProps> = () => {
         />
       </div>
       <div className="ribbon-donation-embed-container flex justify-center">
+        {/*@ts-ignore*/}
         <ribbon-donation-embed
           id="ribbon-donation-embed"
           form_uuid="chem_OTzNO2spcx7GWdeg"

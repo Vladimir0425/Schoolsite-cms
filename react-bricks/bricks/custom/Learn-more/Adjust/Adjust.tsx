@@ -167,7 +167,10 @@ const Adjust: types.Brick<IAdjustProps> = () => {
           />
           <div className="space-y-4 mt-[30px]">
             {likeItems.map((item: string, index: number) => (
-              <label className="flex items-center space-x-3">
+              <label
+                key={`like-item-label-${index}`}
+                className="flex items-center space-x-3"
+              >
                 <div
                   className={`h-[21px] w-[21px] rounded-[21px] border-[1px] border-solid border-[#E5DFDF]  shrink-0 ${
                     likeChecks.includes(index) &&
@@ -191,7 +194,11 @@ const Adjust: types.Brick<IAdjustProps> = () => {
           propName="summaryText"
         />
       </div>
-      <Button content="Send Now" isLeft={false} onClick={onSubmitClick} />
+      <div className="w-full flex justify-end">
+        <div className="w-[180px]">
+          <Button content="Send Now" isLeft={false} onClick={onSubmitClick} />
+        </div>
+      </div>
     </div>
   )
 }

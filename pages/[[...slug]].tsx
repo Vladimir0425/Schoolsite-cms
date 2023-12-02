@@ -38,7 +38,7 @@ const Page: React.FC<PageProps> = ({ page, errorNoKeys, errorPage }) => {
           link.remove()
           clearInterval(timeout.current)
         }
-      }, 500) as any
+      }, 100) as any
     }
   }, [])
 

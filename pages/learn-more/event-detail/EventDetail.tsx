@@ -1,27 +1,29 @@
-import EventIcon1 from '@/assets/eventdetail/event1.png';
-import EventIcon11 from '@/assets/eventdetail/event1-1.png';
-import EventIcon12 from '@/assets/eventdetail/event1-2.png';
-import EventIcon13 from '@/assets/eventdetail/event1-3.png';
-import EventIcon14 from '@/assets/eventdetail/event1-4.png';
-import ClockIcon from '@/assets/eventdetail/clock.svg';
-import TimeIcon from '@/assets/eventdetail/time.svg';
-import AddressIcon from '@/assets/eventdetail/folder.svg';
-import Address2Icon from '@/assets/eventdetail/person.svg';
-import CalendarIcon from '@/assets/eventdetail/calendar.svg';
-import TeacherIcon from '@/assets/eventdetail/teacher.svg';
+import Image from 'next/image'
 
-import { Button } from '@/components/commons/Button';
+import EventIcon1 from '@/public/assets/eventdetail/event1.png'
+import EventIcon11 from '@/public/assets/eventdetail/event1-1.png'
+import EventIcon12 from '@/public/assets/eventdetail/event1-2.png'
+import EventIcon13 from '@/public/assets/eventdetail/event1-3.png'
+import EventIcon14 from '@/public/assets/eventdetail/event1-4.png'
+import ClockIcon from '@/public/assets/eventdetail/clock.svg'
+import TimeIcon from '@/public/assets/eventdetail/time.svg'
+import AddressIcon from '@/public/assets/eventdetail/folder.svg'
+import Address2Icon from '@/public/assets/eventdetail/person.svg'
+import CalendarIcon from '@/public/assets/eventdetail/calendar.svg'
+import TeacherIcon from '@/public/assets/eventdetail/teacher.svg'
+
+import { Button } from '@/components/commons/Button'
 
 export function EventDetail() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-7 md:gap-x-[97px] mx-auto max-w-[1153px] mt-[137px]">
       <div className=" md:col-span-5 font-open-sans text-[#575757]">
-        <img src={EventIcon1} className="w-full" />
+        <Image alt="Detail Image 1" src={EventIcon1} className="w-full" />
         <div className="grid grid-cols-4 mt-[20px] gap-x-[20px]">
-          <img src={EventIcon11} className="w-full" />
-          <img src={EventIcon12} className="w-full" />
-          <img src={EventIcon13} className="w-full" />
-          <img src={EventIcon14} className="w-full" />
+          <Image alt="Detail Image 2" src={EventIcon11} className="w-full" />
+          <Image alt="Detail Image 3" src={EventIcon12} className="w-full" />
+          <Image alt="Detail Image 4" src={EventIcon13} className="w-full" />
+          <Image alt="Detail Image 5" src={EventIcon14} className="w-full" />
         </div>
         <p className="mt-[40px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel
@@ -148,5 +150,5 @@ export function EventDetail() {
         </div>
       </div>
     </div>
-  );
+  )
 }
