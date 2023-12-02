@@ -1,5 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
+import { useEffect, useRef } from 'react'
+
 import {
   PageViewer,
   cleanPage,
@@ -24,6 +26,21 @@ const Page: React.FC<PageProps> = ({ page, errorNoKeys, errorPage }) => {
   // Removes unknown or not allowed bricks
   const { pageTypes, bricks } = useReactBricksContext()
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
+  let timeout = useRef<NodeJS.Timeout>(null)
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      timeout.current = setInterval(() => {
+        const link = document.querySelector(
+          "a[href='https://reactbricks.com?utm_campaign=site-badge'"
+        )
+        if (link) {
+          link.remove()
+          clearInterval(timeout.current)
+        }
+      }, 500) as any
+    }
+  }, [])
 
   return (
     <>
