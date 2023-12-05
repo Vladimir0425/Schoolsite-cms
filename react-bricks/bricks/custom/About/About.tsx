@@ -117,7 +117,7 @@ const About: types.Brick<AboutProps> = () => {
             </div>
             <RichText
               renderBlock={({ children }) => (
-                <p className="text-[#575757] font-open-sans max-w-[566px] mb-[20px]">
+                <p className="text-[#575757] text-[14px] font-poppins max-w-[566px] mb-[20px]">
                   {children}
                 </p>
               )}
@@ -158,7 +158,7 @@ const About: types.Brick<AboutProps> = () => {
           <div className="ml-[20px]">
             <RichText
               renderBlock={({ children }) => (
-                <p className="font-open-sans max-w-[566px] text-[#575757] text-[14px] mb-[20px]">
+                <p className="font-poppins max-w-[566px] text-[#575757] text-[14px] mb-[20px]">
                   {children}
                 </p>
               )}
@@ -173,7 +173,7 @@ const About: types.Brick<AboutProps> = () => {
                 </span>
               )}
               renderUL={({ children }) => (
-                <ul className="ml-[29px] font-open-sans text-[#575757] text-[14px]">
+                <ul className="ml-[29px] font-poppins text-[#575757] text-[14px]">
                   {children}
                 </ul>
               )}
@@ -278,11 +278,11 @@ const About: types.Brick<AboutProps> = () => {
             </div> */}
           {/* </div> */}
         </div>
-        <div className="flex justify-center mt-[58px]">
-          <div className="max-w-[1166px] flex flex-col mb-[92px]">
+        <div className="w-full mt-[58px]">
+          <div className="px-4 container:px-0 max-w-screen-container mx-auto flex flex-col mb-[92px]">
             <RichText
               renderBlock={({ children }) => (
-                <p className="font-open-sans text-[#575757] text-[14px] mb-[20px]">
+                <p className="font-poppins text-[#575757] text-[14px] mb-[20px]">
                   {children}
                 </p>
               )}

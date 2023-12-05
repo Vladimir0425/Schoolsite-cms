@@ -7,9 +7,9 @@ module.exports = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '35.172.151.238',
-        port: '3003',
+        protocol: 'https',
+        hostname: 'plankton-app-vkwlv.ondigitalocean.app',
+        port: '80',
         pathname: '/uploads/**',
       },
     ],
