@@ -91,7 +91,7 @@ const Contact: types.Brick<IContactProps> = () => {
           </div>
           <div className="flex flex-col gap-y-[24px]">
             <h1 className="font-open-sans font-normal text-[#2B2B2B] text-3xl">
-              Our Contracts
+              Contact Us
             </h1>
             <div className="flex items-center gap-x-[15px]">
               <span className="w-12 h-12 flex rounded-full items-center justify-center bg-[#F69B03] shrink-0">
