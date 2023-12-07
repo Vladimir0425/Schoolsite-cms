@@ -8,6 +8,7 @@ import { Button } from '@/components/commons/Button'
 import { Input } from '@/components/forms/Input'
 
 import { HttpService } from '@/services'
+import { useSnackbar } from 'notistack'
 
 const dislikeItems = [
   'Safety: My child does not feel physically, emotionally and/or psychologically safe.',
@@ -39,6 +40,8 @@ const Adjust: types.Brick<IAdjustProps> = () => {
   const router = useRouter()
   const pathname = router.pathname
 
+  const { enqueueSnackbar } = useSnackbar()
+
   const [email, setEmail] = useState('')
   const [disChecks, setDisChecks] = useState<number[]>([])
   const [likeChecks, setLikeChecks] = useState<number[]>([])
@@ -56,16 +59,42 @@ const Adjust: types.Brick<IAdjustProps> = () => {
     setDistinction('')
   }
 
+  const isValidate = () => {
+    if (
+      email !== '' ||
+      distinction === '' ||
+      disChecks.length === 0 ||
+      likeChecks.length === 0
+    )
+      return false
+    return true
+  }
+
   const onSubmitClick = () => {
+    if (!isValidate()) {
+      enqueueSnackbar('Input invalid!', { variant: 'warning' })
+      return
+    }
+
+    const dislikeItems = disChecks.map((check: number) =>
+      check === dislikeItems.length - 1 ? dislikeOtherText : dislikeItems[check]
+    )
+    const likeItems = likeChecks.map((check: number) => likeItems[check])
+
     const body = {
       email,
       distinction,
-      dislikeItems: JSON.stringify(disChecks),
+      dislikeItems: JSON.stringify(dislikeItems),
       likeItems: JSON.stringify(likeItems),
     }
-    HttpService.post('/isright', body).then((res) => {
-      onInitStates()
-    })
+    HttpService.post('/isright', body)
+      .then((res) => {
+        onInitStates()
+        enqueueSnackbar('Quiz submit success!', { variant: 'success' })
+      })
+      .catch((err) => {
+        enqueueSnackbar('Quiz fail!', { variant: 'error' })
+      })
   }
 
   const onDislikeChange = (item: number) => () => {

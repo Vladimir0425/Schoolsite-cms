@@ -12,6 +12,7 @@ import { Input } from '@/components/forms/Input'
 import { HttpService } from '@/services'
 
 import ClockIcon from '@/public/assets/approach/clock.svg'
+import { useSnackbar } from 'notistack'
 
 const initialContact = {
   name: '',
@@ -22,6 +23,8 @@ const initialContact = {
 interface IContactProps {}
 
 const Contact: types.Brick<IContactProps> = () => {
+  const { enqueueSnackbar } = useSnackbar()
+
   const [contact, setContact] = useState(initialContact)
   const googleMapProps = {
     center: {
@@ -36,11 +39,19 @@ const Contact: types.Brick<IContactProps> = () => {
   }
 
   const onContactSubmit = () => {
-    if (Object.values(contact).every((item) => item === '')) return
+    if (Object.values(contact).every((item) => item === '')) {
+      enqueueSnackbar('Input invalid!', { variant: 'warning' })
+      return
+    }
     const body = { ...contact, type: 'general' }
-    HttpService.post('/message', body).then((res) => {
-      setContact(initialContact)
-    })
+    HttpService.post('/message', body)
+      .then((res) => {
+        setContact(initialContact)
+        enqueueSnackbar('Submit success!', { variant: 'success' })
+      })
+      .catch((err) => {
+        enqueueSnackbar('Contact fail!', { variant: 'error' })
+      })
   }
 
   return (
@@ -91,7 +102,7 @@ const Contact: types.Brick<IContactProps> = () => {
           </div>
           <div className="flex flex-col gap-y-[24px]">
             <h1 className="font-open-sans font-normal text-[#2B2B2B] text-3xl">
-              Our Contracts
+              Contact Us
             </h1>
             <div className="flex items-center gap-x-[15px]">
               <span className="w-12 h-12 flex rounded-full items-center justify-center bg-[#F69B03] shrink-0">

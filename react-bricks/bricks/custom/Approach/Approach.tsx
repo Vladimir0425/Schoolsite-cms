@@ -13,6 +13,7 @@ import { HttpService } from '@/services'
 
 import ClockIcon from '@/public/assets/approach/clock.svg'
 import TaskImage from '@/public/assets/approach/task.png'
+import { useSnackbar } from 'notistack'
 
 interface IContact {
   name: string
@@ -31,6 +32,8 @@ const initialContact: IContact = {
 interface IApproachProps {}
 
 const Approach: types.Brick<IApproachProps> = () => {
+  const { enqueueSnackbar } = useSnackbar()
+
   const [contact, setContact] = useState<IContact>(initialContact)
 
   const onContactUpdate =
@@ -42,11 +45,20 @@ const Approach: types.Brick<IApproachProps> = () => {
     }
 
   const onContactSubmit = () => {
-    if (Object.values(contact).every((item) => item === '')) return
+    if (Object.values(contact).every((item) => item === '')) {
+      enqueueSnackbar('Input invalid!', { variant: 'warning' })
+      return
+    }
+
     const body = { ...contact, type: 'spotting' }
-    // HttpService.post('/message', body).then((res) => {
-    //   setContact(initialContact)
-    // })
+    HttpService.post('/message', body)
+      .then((res) => {
+        setContact(initialContact)
+        enqueueSnackbar('Contact success!', { variant: 'success' })
+      })
+      .catch((err) => {
+        enqueueSnackbar('Contact fail!', { variant: 'error' })
+      })
   }
 
   return (
@@ -123,7 +135,7 @@ const Approach: types.Brick<IApproachProps> = () => {
         <div className="col-span-5 mt-[50px] md:col-span-2">
           <div className="py-[50px] px-[11px] rounded-[23px] border-[1px] border-[#F37335] shadow-[0px_2px_10px_#15579914]">
             <h1 className="font-poppins font-bold text-[#2B2B2B] text-xl mb-[29px]">
-              Secure You Childs Spot
+              Secure Your Child's Spot
             </h1>
             <div className="grid grid-cols-1 gap-y-[29px]">
               <Input
@@ -157,7 +169,7 @@ const Approach: types.Brick<IApproachProps> = () => {
           </div>
           <div className="mt-[50px] grid grid-cols-1 gap-y-[25px] py-[50px] px-[32px] rounded-[23px] border-[1px] border-[#F37335] shadow-[0px_2px_10px_#15579914] mb-[45.6px]">
             <h1 className="font-poppins font-bold text-[#2B2B2B] text-xl">
-              Our Contracts
+              Contact Us
             </h1>
             <div className="flex items-center gap-x-[15px]">
               <span className="w-12 h-12 flex rounded-full items-center justify-center bg-[#F69B03] shrink-0">

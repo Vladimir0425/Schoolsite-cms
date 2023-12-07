@@ -68,17 +68,17 @@ export function Footer() {
 
   const onContactSubmit = () => {
     if (Object.values(joinContact).every((item) => item === '')) {
-      enqueueSnackbar('Input correct information!', { variant: 'warning' })
+      enqueueSnackbar('Input invalid!', { variant: 'warning' })
       return
     }
     const body = { ...joinContact, type: 'joining' }
     HttpService.post('/message', body)
       .then((res) => {
         setJoinContact(initialContact)
-        enqueueSnackbar('Successfully Sent!', { variant: 'success' })
+        enqueueSnackbar('Submit success!', { variant: 'success' })
       })
       .catch((err) => {
-        enqueueSnackbar('Error occured while joining!', { variant: 'error' })
+        enqueueSnackbar('Contact fail!', { variant: 'error' })
       })
   }
 
@@ -225,21 +225,21 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-x-3">
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/AtlasAcademics"
             target="_blank"
             className="bg-[#3365A6] rounded-full w-6 h-6 flex items-center justify-center cursor-pointer transform transition-all hover:scale-110 duration-300"
           >
             <FaFacebookF fill="white" fontSize={12} />
           </a>
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/company/atlas-academics"
             target="_blank"
             className="bg-[#3365A6] rounded-full w-6 h-6 flex items-center justify-center cursor-pointer transform transition-all hover:scale-110 duration-300"
           >
             <FaLinkedinIn fill="white" fontSize={12} />
           </a>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/atlasacademics_fl"
             target="_blank"
             className="bg-[#3365A6] rounded-full w-6 h-6 flex items-center justify-center cursor-pointer transform transition-all hover:scale-110 duration-300"
           >
