@@ -20,6 +20,8 @@ export function Input({
   placeholder = '',
   className = '',
   onChange = () => {},
+  min = 0,
+  max = 100,
   ...nativeAttrs
 }: IInputProps) {
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,6 +35,8 @@ export function Input({
     <input
       type={type}
       value={value.toString()}
+      min={min}
+      max={max}
       placeholder={placeholder}
       onChange={onInputChange}
       className={clsx(

@@ -2,6 +2,7 @@ import { types } from 'react-bricks/frontend'
 import { Text, RichText } from 'react-bricks/frontend'
 
 import { useState } from 'react'
+import { useSnackbar } from 'notistack'
 
 import { Circlenumbox } from '@/components/commons/CircleNumbox'
 import { Input } from '@/components/forms/Input'
@@ -42,7 +43,12 @@ const initialAdmission = {
 interface IAdmissionsProps {}
 
 const Admissions: types.Brick<IAdmissionsProps> = () => {
+  const { enqueueSnackbar } = useSnackbar()
+
   const [admission, setAdmission] = useState<IAdmission>(initialAdmission)
+  const [birthYear, setBirthYear] = useState(new Date().getFullYear())
+  const [birthMonth, setBirthMonth] = useState(new Date().getMonth() + 1)
+  const [birthDay, setBirthDay] = useState(new Date().getDate())
 
   const onDataChange = (field: string) => (data: string | number | Date) => {
     let value: string | number | Date = data
@@ -50,9 +56,9 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
       ['birth_date_year', 'birth_date_month', 'birth_date_day'].includes(field)
     ) {
       const date = admission.birth_date
-      if (field.endsWith('year')) date.setFullYear(data as number)
-      else if (field.endsWith('month')) date.setMonth((data as number) - 1)
-      else date.setDate(data as number)
+      if (field.endsWith('year')) setBirthYear(data as number)
+      else if (field.endsWith('month')) setBirthMonth(data as number)
+      else setBirthDay(data as number)
       value = date
     }
 
@@ -76,10 +82,40 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
     }
   }
 
+  const isValid = () => {
+    return !Object.keys(admission)
+      .filter((key: string) => key !== 'birth_date')
+      .some(
+        (key: string) =>
+          (typeof admission[key] === 'string' && admission[key] === '') ||
+          (typeof admission[key] === 'object' &&
+            Object.values(admission[key]).length === 0)
+      )
+  }
+
   const onSubmitClick = () => {
-    HttpService.post('/admission', admission).then((res) => {
-      setAdmission(initialAdmission)
-    })
+    if (!isValid()) {
+      enqueueSnackbar('Input invalid!', { variant: 'warning' })
+      return
+    }
+    const body = {
+      ...admission,
+      birth_date: new Date(birthYear, birthMonth - 1, birthDay),
+      fee_type:
+        admission.fee_type === 'ready'
+          ? 'Yes, I am ready to pay $125 to commit my student!'
+          : admission.fee_type === 'not-quite'
+          ? 'No, I am not quite ready to commit my student.'
+          : "Add my child to next year's wait list",
+    }
+    HttpService.post('/admission', body)
+      .then((res) => {
+        setAdmission(initialAdmission)
+        enqueueSnackbar('Submit success!', { variant: 'success' })
+      })
+      .catch((err) => {
+        enqueueSnackbar('Admission fail!', { variant: 'error' })
+      })
   }
 
   const onPayClick = () => {
@@ -129,7 +165,7 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
           <div className="flex gap-x-[23px]">
             <Input
               type="number"
-              value={admission.birth_date.getMonth() + 1}
+              value={birthMonth}
               onChange={onDataChange('birth_date_month')}
               placeholder="Month"
               min={1}
@@ -137,7 +173,7 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
             />
             <Input
               type="number"
-              value={admission.birth_date.getDate()}
+              value={birthDay}
               onChange={onDataChange('birth_date_day')}
               placeholder="Day"
               min={1}
@@ -145,7 +181,7 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
             />
             <Input
               type="number"
-              value={admission.birth_date.getFullYear()}
+              value={birthYear}
               onChange={onDataChange('birth_date_year')}
               placeholder="Year"
               min={1970}
