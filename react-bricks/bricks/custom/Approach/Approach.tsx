@@ -13,6 +13,7 @@ import { HttpService } from '@/services'
 
 import ClockIcon from '@/public/assets/approach/clock.svg'
 import TaskImage from '@/public/assets/approach/task.png'
+import { useSnackbar } from 'notistack'
 
 interface IContact {
   name: string
@@ -31,6 +32,8 @@ const initialContact: IContact = {
 interface IApproachProps {}
 
 const Approach: types.Brick<IApproachProps> = () => {
+  const { enqueueSnackbar } = useSnackbar()
+
   const [contact, setContact] = useState<IContact>(initialContact)
 
   const onContactUpdate =
@@ -42,11 +45,20 @@ const Approach: types.Brick<IApproachProps> = () => {
     }
 
   const onContactSubmit = () => {
-    if (Object.values(contact).every((item) => item === '')) return
+    if (Object.values(contact).every((item) => item === '')) {
+      enqueueSnackbar('Input invalid!', { variant: 'warning' })
+      return
+    }
+
     const body = { ...contact, type: 'spotting' }
-    // HttpService.post('/message', body).then((res) => {
-    //   setContact(initialContact)
-    // })
+    HttpService.post('/message', body)
+      .then((res) => {
+        setContact(initialContact)
+        enqueueSnackbar('Contact success!', { variant: 'success' })
+      })
+      .catch((err) => {
+        enqueueSnackbar('Contact fail!', { variant: 'error' })
+      })
   }
 
   return (

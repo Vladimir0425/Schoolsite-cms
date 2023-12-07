@@ -53,7 +53,7 @@ const routeItems: RouteItem[] = [
       },
       {
         id: 1,
-        title: 'Is Atlas Right for My Child',
+        title: 'Is Atlas Right for My Child?',
         src: '/adjust',
       },
       // {
@@ -312,21 +312,21 @@ export function Header() {
         </ul>
         <div className="flex items-center gap-x-3 max-w-none">
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/AtlasAcademics"
             target="_blank"
             className="bg-[#3365A6] rounded-full w-6 h-6 flex items-center justify-center cursor-pointer transform transition-all hover:scale-110 duration-300"
           >
             <FaFacebookF fill="white" fontSize={12} />
           </a>
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/company/atlas-academics"
             target="_blank"
             className="bg-[#3365A6] rounded-full w-6 h-6 flex items-center justify-center cursor-pointer transform transition-all hover:scale-110 duration-300"
           >
             <FaLinkedinIn fill="white" fontSize={12} />
           </a>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/atlasacademics_fl"
             target="_blank"
             className="bg-[#3365A6] rounded-full w-6 h-6 flex items-center justify-center cursor-pointer transform transition-all hover:scale-110 duration-300"
           >
