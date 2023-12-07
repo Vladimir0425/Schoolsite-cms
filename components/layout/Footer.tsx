@@ -9,6 +9,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaEnvelope,
 } from 'react-icons/fa6'
 
 import GoogleMapReact from 'google-map-react'
@@ -145,7 +146,7 @@ export function Footer() {
             through failure, and real-world application of knowledge.
           </p>
         </div>
-        <div className="max-w-[200px] lg:col-span-1">
+        <div className="max-w-[200px] lg:col-span-1 space-y-1">
           <div className="flex gap-x-5 items-center">
             <span className="w-5 h-5 flex rounded-full items-center justify-center bg-[#0E6BA8] shrink-0">
               <FaPhone fill="white" className="w-[12px] h-[12px]" />
@@ -178,6 +179,12 @@ export function Footer() {
                 23123 State Road 7, Suite 107, Boca Raton, FL 33428
               </p>
             </div>
+          </div>
+          <div className="text-sm py-2 flex items-center gap-x-5 w-full">
+            <span className="shrink-0">
+              <FaEnvelope className="w-5 h-5" fill="#0E6BA8" />
+            </span>
+            <p>hello@atlasacademics.com</p>
           </div>
         </div>
         <div className="max-w-[180px] flex flex-col lg:col-span-1">

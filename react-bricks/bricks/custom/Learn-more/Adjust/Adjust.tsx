@@ -61,7 +61,7 @@ const Adjust: types.Brick<IAdjustProps> = () => {
 
   const isValidate = () => {
     if (
-      email !== '' ||
+      email === '' ||
       distinction === '' ||
       disChecks.length === 0 ||
       likeChecks.length === 0
@@ -76,16 +76,16 @@ const Adjust: types.Brick<IAdjustProps> = () => {
       return
     }
 
-    const dislikeItems = disChecks.map((check: number) =>
+    const disCheckItems = disChecks.map((check: number) =>
       check === dislikeItems.length - 1 ? dislikeOtherText : dislikeItems[check]
     )
-    const likeItems = likeChecks.map((check: number) => likeItems[check])
+    const likeCheckItems = likeChecks.map((check: number) => likeItems[check])
 
     const body = {
       email,
       distinction,
-      dislikeItems: JSON.stringify(dislikeItems),
-      likeItems: JSON.stringify(likeItems),
+      dislikeItems: JSON.stringify(disCheckItems),
+      likeItems: JSON.stringify(likeCheckItems),
     }
     HttpService.post('/isright', body)
       .then((res) => {
