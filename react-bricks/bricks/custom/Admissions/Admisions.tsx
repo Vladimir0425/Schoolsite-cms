@@ -88,16 +88,15 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
       .some(
         (key: string) =>
           (typeof admission[key] === 'string' && admission[key] === '') ||
-          (typeof admission[key] === 'object' &&
-            Object.values(admission[key]).length === 0)
+          (key === 'grade_level' && Object.values(admission[key]).length === 0)
       )
   }
 
   const onSubmitClick = () => {
-    if (!isValid()) {
-      enqueueSnackbar('Input invalid!', { variant: 'warning' })
-      return
-    }
+    // if (!isValid()) {
+    //   enqueueSnackbar('Input invalid!', { variant: 'warning' })
+    //   return
+    // }
     const body = {
       ...admission,
       birth_date: new Date(birthYear, birthMonth - 1, birthDay),
@@ -202,7 +201,6 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
           <div className="flex gap-x-[23px]">
             {gradeItems.map((grade, idx) => (
               <Circlenumbox
-                key={idx}
                 value={grade}
                 isSelected={admission.grade_level.includes(grade)}
                 handleSelect={onGradeChange(grade)}
