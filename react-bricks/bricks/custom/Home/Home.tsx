@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 import moment from 'moment'
 import clsx from 'clsx'
+import { validate } from 'email-validator'
 
 import { HttpService } from '@/services'
 
@@ -20,6 +21,7 @@ import Charac2Icon from '@/public/assets/home/charac2.png'
 import Charac3Icon from '@/public/assets/home/charac3.png'
 import Charac4Icon from '@/public/assets/home/charac4.png'
 import styles from './Home.module.scss'
+import { useSnackbar } from 'notistack'
 
 const initialTexts = [
   {
@@ -54,8 +56,12 @@ interface HomeProps {}
 const Home: types.Brick<HomeProps> = () => {
   const router = useRouter()
   const pathname = router.pathname
+
+  const { enqueueSnackbar } = useSnackbar()
+
   const [isChanged, setIsChanged] = useState<boolean>(false)
   const [newsData, setNewsData] = useState<any[]>([])
+  const [subscriber, setSubscriber] = useState('')
   const [isTextCollapsed, setIsTextCollapsed] =
     useState<boolean[]>(initialCollapsed)
   const isAdmin = useMemo(() => {
@@ -84,6 +90,27 @@ const Home: types.Brick<HomeProps> = () => {
 
   const onReadBlockClick = (id: string) => {
     navigate(`/news/${id}`)
+  }
+
+  const onSubscribeClick = () => {
+    if (subscriber === '' || !validate(subscriber)) {
+      enqueueSnackbar('Input invalid!', { variant: 'warning' })
+      return
+    }
+
+    HttpService.post('/subscriber', { email: subscriber })
+      .then((res) => {
+        const { status } = res.data
+        if (status === 200) {
+          enqueueSnackbar('Subscribe success!', { variant: 'success' })
+          return
+        } else {
+          enqueueSnackbar('Duplicated subscriber!', { variant: 'warning' })
+        }
+      })
+      .catch((err) => {
+        enqueueSnackbar('Subscribe fail!', { variant: 'error' })
+      })
   }
 
   useEffect(() => {
@@ -166,10 +193,15 @@ const Home: types.Brick<HomeProps> = () => {
           </div>
           <div className="flex flex-row w-full h-[50px] items-center relative mt-[29px] mb-[41px] -z-1">
             <input
-              className="w-full text-[#575757] py-[14px] pl-[24.28px] italic border-solid  border-[2px] border-[#F2EFEF] rounded-[50px] outline-none shadow-[0px_2px_10px_#15579914]"
+              value={subscriber}
               placeholder="Sign up for updates simply enter your email"
+              className="w-full text-[#575757] py-[14px] pl-[24.28px] italic border-solid  border-[2px] border-[#F2EFEF] rounded-[50px] outline-none shadow-[0px_2px_10px_#15579914]"
+              onChange={(e: any) => setSubscriber(e.target.value)}
             />
-            <h2 className="p-[10px] rounded-full bg-[#3365A6] text-[white] cursor-pointer absolute right-1 font-poppins font-medium">
+            <h2
+              className="p-[10px] rounded-full bg-[#3365A6] text-[white] cursor-pointer absolute right-1 font-poppins font-medium"
+              onClick={onSubscribeClick}
+            >
               GO
             </h2>
           </div>
