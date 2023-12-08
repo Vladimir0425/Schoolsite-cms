@@ -201,6 +201,7 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
           <div className="flex gap-x-[23px]">
             {gradeItems.map((grade, idx) => (
               <Circlenumbox
+                key={`circle-numbox-${idx}`}
                 value={grade}
                 isSelected={admission.grade_level.includes(grade)}
                 handleSelect={onGradeChange(grade)}
