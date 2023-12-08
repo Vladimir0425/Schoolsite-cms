@@ -134,7 +134,13 @@ const Admissions: types.Brick<IAdmissionsProps> = () => {
             {children}
           </h1>
         )}
-        allowedFeatures={[types.RichTextFeatures.Heading1]}
+        renderBold={({ children }) => (
+          <span className="font-bold">{children}</span>
+        )}
+        allowedFeatures={[
+          types.RichTextFeatures.Heading1,
+          types.RichTextFeatures.Bold,
+        ]}
         propName="headText"
       />
       <div className="max-w-[860px] mt-[40px] grid grid-cols-1 gap-y-[21px]">
