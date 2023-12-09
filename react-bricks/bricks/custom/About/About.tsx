@@ -249,11 +249,11 @@ const About: types.Brick<AboutProps> = () => {
               </div>*/}
           </div>
           {/* <div className="grid grid-cols-1 gap-8 w-full"> */}
-          <BImage
+          {/* <BImage
             alt="Background"
             imageClassName="rb-lazy hidden aspect-square md:block md:animate-fadeInUp3 rounded-full w-full max-w-[500px]"
             propName="BackImage2"
-          />
+          /> */}
           {/* <div className="flex flex-col gap-y-[30px] w-full">
               {benefitCardItems1.map((item) => (
                 <BenefitCard
