@@ -1,1 +1,1 @@
-export const SERVER_URL = 'https://plankton-app-vkwlv.ondigitalocean.app'
+export const SERVER_URL = 'https://atlasacademics.com/api'
