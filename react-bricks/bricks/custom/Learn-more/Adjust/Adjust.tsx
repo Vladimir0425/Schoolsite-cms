@@ -31,7 +31,7 @@ const distinctItems = [
   'Good grades',
   'Meets state requirements',
   "Increase in my child's desire to learn",
-  "Balance of my child's education with wife",
+  "Balance of  my child's education with life.",
 ]
 
 interface IAdjustProps {}
