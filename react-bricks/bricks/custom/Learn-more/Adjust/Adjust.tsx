@@ -135,10 +135,14 @@ const Adjust: types.Brick<IAdjustProps> = () => {
         }}
       />
       <div className="font-open-sans text-[#575757] text-sm italic">
-        <Text
+        <RichText
           renderBlock={({ children }) => (
             <p className="mt-[36px]">{children}</p>
           )}
+          renderBold={({ children }) => (
+            <span className="font-bold">{children}</span>
+          )}
+          allowedFeatures={[types.RichTextFeatures.Bold]}
           propName="dislikeText"
           placeholder="Type here..."
         />
@@ -170,7 +174,12 @@ const Adjust: types.Brick<IAdjustProps> = () => {
         <div className="w-full mt-[49px] mb-[14px]">
           <RichText
             renderBlock={({ children }) => <p>{children}</p>}
+            renderBold={({ children }) => (
+              <span className="font-bold">{children}</span>
+            )}
+            allowedFeatures={[types.RichTextFeatures.Bold]}
             propName="distinction"
+            placeholder="Type here..."
           />
         </div>
         <select
