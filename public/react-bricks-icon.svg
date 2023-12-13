@@ -1,79 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1024"
-   height="1024"
-   viewBox="0 0 270.93333 270.93333"
-   version="1.1"
-   id="svg4627"
-   inkscape:export-filename="/Users/nestohuis/Kopies/99designs/ReactBricks/Icon/ReactBricks-Icon_16x16.png"
-   inkscape:export-xdpi="96.000008"
-   inkscape:export-ydpi="96.000008"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="ReactBricks-Icon.svg">
-  <defs
-     id="defs4621" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="650.57009"
-     inkscape:cy="434.04783"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     units="px"
-     inkscape:window-width="1440"
-     inkscape:window-height="817"
-     inkscape:window-x="0"
-     inkscape:window-y="1"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata4624">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(1.2516975e-6,-26.066642)">
-    <g
-       id="g4645"
-       transform="translate(0,-7.964442e-6)">
-      
-      <g
-         id="g4608"
-         transform="matrix(11.395124,0,0,11.395124,-976.50039,-882.01502)">
-        <path
-           inkscape:connector-curvature="0"
-           id="path4604"
-           d="m 89.441569,80.202363 c -4.314359,-0.08215 -4.314359,6.431634 0,6.349484 h 2.601907 c 4.314357,0.08215 4.314357,-6.431634 0,-6.349484 z m 13.696321,8.201051 c -4.293622,-0.06072 -4.293622,6.410722 0,6.35 h 2.60191 c 4.29362,0.06072 4.29362,-6.410724 0,-6.35 z m -13.712341,8.201565 c -4.293532,-0.06063 -4.293532,6.410631 0,6.350001 h 2.601907 c 4.293531,0.0606 4.293531,-6.410625 0,-6.350001 z"
-           style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#b43278;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.3499999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
-        <path
-           inkscape:connector-curvature="0"
-           id="path4606"
-           d="m 99.752893,80.202362 c -4.314356,-0.08215 -4.314356,6.431635 0,6.349484 h 5.970697 c 4.31436,0.08215 4.31436,-6.431634 0,-6.349484 z m -10.327018,8.201052 c -4.293624,-0.06072 -4.293624,6.410722 0,6.35 h 5.970696 c 4.293624,0.06072 4.293624,-6.410725 0,-6.35 z m 10.34252,8.201564 c -4.293528,-0.06063 -4.293528,6.410632 0,6.350002 h 5.971215 c 4.29353,0.0606 4.29353,-6.410626 0,-6.350002 z"
-           style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#f65a8e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.3499999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+<svg id="mark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="81.702" height="79.3" viewBox="0 0 81.702 79.3">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_4" data-name="Rectangle 4" width="81.702" height="79.3" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_9" data-name="Group 9" transform="translate(0 0)">
+    <g id="Group_8" data-name="Group 8" clip-path="url(#clip-path)">
+      <g id="Group_7" data-name="Group 7">
+        <g id="Group_6" data-name="Group 6" clip-path="url(#clip-path)">
+          <path id="Path_7" data-name="Path 7" d="M106.277,110.231a21.366,21.366,0,0,0,0-30.852,17.247,17.247,0,0,1,8.27-2.127c.232,0,.47.03.7.04a29.6,29.6,0,0,1-.011,35.044c-.231.01-.461.025-.693.025a17.264,17.264,0,0,1-8.266-2.13" transform="translate(-62.222 -45.052)" fill="#f0a71b"/>
+          <path id="Path_8" data-name="Path 8" d="M29.381,48.487a29.193,29.193,0,0,1,6.3.69,33.09,33.09,0,0,0-8.974,7.67,21.368,21.368,0,0,0,.05,42.376,33.5,33.5,0,0,0,8.991,7.647,29.523,29.523,0,1,1-6.363-58.384" transform="translate(0 -28.277)" fill="#f0a71b"/>
+          <path id="Path_9" data-name="Path 9" d="M88.317,56.659A21.3,21.3,0,0,0,67.75,72.737a17.8,17.8,0,0,1-6.27-6.708A29.227,29.227,0,0,1,91.73,48.692a17.491,17.491,0,0,1,2.56,8.841,21.047,21.047,0,0,0-5.973-.874" transform="translate(-35.996 -28.277)" fill="#c1c1c1"/>
+          <path id="Path_10" data-name="Path 10" d="M69.432,104.191a21.271,21.271,0,0,0,36.64-21.028,33.383,33.383,0,0,0,2.148-11.525,29.446,29.446,0,1,1-49.811,28.486,32.8,32.8,0,0,0,11.024,4.067" transform="translate(-34.198 -41.778)" fill="#c1c1c1"/>
+          <path id="Path_11" data-name="Path 11" d="M40.049,83.527a21.3,21.3,0,0,0,20.574,16.1,21.042,21.042,0,0,0,5.973-.874,17.357,17.357,0,0,1-2.571,8.842A29.227,29.227,0,0,1,33.77,90.224a17.6,17.6,0,0,1,6.279-6.7" transform="translate(-19.772 -48.711)" fill="#2f65a1"/>
+          <path id="Path_12" data-name="Path 12" d="M58.868,0a29.563,29.563,0,0,1,21.7,49.445,33.282,33.282,0,0,0-2.158-11.5A21.25,21.25,0,0,0,41.788,16.878,32.821,32.821,0,0,0,30.773,20.9,29.453,29.453,0,0,1,58.868,0" transform="translate(-18.017 0)" fill="#2f65a1"/>
+        </g>
       </g>
     </g>
   </g>

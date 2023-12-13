@@ -139,11 +139,10 @@ export function Footer() {
         <div className="max-w-[400px] lg:col-span-2">
           <Logo />
           <p className="text-sm">
-            Atlas Academics is a part of a larger microschool movement across
-            Florida, providing an alternative to families unsatisfied with
-            traditional school options. We focus on mastery-based learning, life
-            abilities, critical thinking, encouraging curiosity, maturing grit
-            through failure, and real-world application of knowledge.
+            Our modern micro-school weaves together guided instruction,
+            software-based learning, and hands-on experiences in a safe,
+            relationship-driven relationship driven environment. Now enrolling
+            families in the South Boca Raton, Parkland and Coconut Creek area.
           </p>
         </div>
         <div className="max-w-[200px] lg:col-span-1 space-y-1">
